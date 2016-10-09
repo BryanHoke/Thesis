@@ -20,11 +20,14 @@
 \begin{document}
 \makefrontmatter
 
-% Implementation Details
-\section*{Implementation Details}
+% Procedure
+\section*{Procedure}
 
-% 	Genetic Coding of Learning Mechanisms
-\subsection*{Genetic Coding of Learning Mechanisms}
+%% Implementation Details
+\subsection*{Implementation Details}
+
+%%% Genetic Coding of Learning Mechanisms
+\subsubsection*{Genetic Coding of Learning Mechanisms}
 
 \begin{center}
 	$a_j$ the activation of the input unit $j$
@@ -76,8 +79,8 @@ The other 30 bits encode the other ten coefficients in groups of three. The firs
 	\end{cases}
 \]
 
-% 	Genetic Coding of Initial Weights
-\subsection*{Genetic Coding of Initial Weights}
+%%% Genetic Coding of Initial Weights
+\subsubsection*{Genetic Coding of Initial Weights}
 
 Network weights are evolved alongside learning rules. It would not be meaningful for each chromosome to represent a single set of weights to be used on all tasks, so instead each chromosome simultaneously represents a distinct set of weights for every task in the evolutionary run. The weights to be applied to each evolutionary task are encoded in distinct, consistent regions of each chromosome. 
 
@@ -100,6 +103,9 @@ Weights are encoded using 3 bits each. The first bit is the sign of the weight. 
 For each task the number of weights encoded is equal to the number of inputs in that task plus one bias weight.
 
 There are two conditions of evaluation: the "nurturing" case and the "non-nurturing" case. During evaluation, each network is first trained for 10 epochs using its learning rule. Following this, the network is evaluated on the same tasks. In the "nurturing" case the individual's fitness is simply the result of the evaluation, whereas in the "non-nurturing" case the individual's fitness is the average of evaluation during all training epochs and the final evaluation.
+
+%%% Evaluation of Fitness
+\subsubsection*{Evaluation of Fitness}
 
 Fitness evaluation for the nurturing case:
 
@@ -133,7 +139,7 @@ Fitness of the chromosome is obtained by evaluating its performance on each of t
 
 After each evolutionary run, the learning rule bits are isolated and evaluated on the test tasks (using both the nurturing and non-nurturing conditions) and the weight-encoding bits are isolated and evaluated on the evolutionary tasks.
 
-\subsection*{Parameters of the Genetic Algorithm}
+\subsubsection*{Parameters of the Genetic Algorithm}
 
 % TODO: Describe GA used
 % TODO: Describe "segment-wise" crossover used
