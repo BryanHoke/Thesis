@@ -20,7 +20,11 @@
 \begin{document}
 \makefrontmatter
 
-% Genetic Coding of Learning Mechanisms
+% Implementation Details
+\section*{Implementation Details}
+
+% 	Genetic Coding of Learning Mechanisms
+\subsection*{Genetic Coding of Learning Mechanisms}
 
 \begin{center}
 	$a_j$ the activation of the input unit $j$
@@ -72,7 +76,8 @@ The other 30 bits encode the other ten coefficients in groups of three. The firs
 	\end{cases}
 \]
 
-% Genetic Coding of Initial Weights
+% 	Genetic Coding of Initial Weights
+\subsection*{Genetic Coding of Initial Weights}
 
 Network weights are evolved alongside learning rules. It would not be meaningful for each chromosome to represent a single set of weights to be used on all tasks, so instead each chromosome simultaneously represents a distinct set of weights for every task in the evolutionary run. The weights to be applied to each evolutionary task are encoded in distinct, consistent regions of each chromosome. 
 
