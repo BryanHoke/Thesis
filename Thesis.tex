@@ -128,7 +128,7 @@ Fitness of the chromosome is obtained by evaluating its performance on each of t
 
 After each evolutionary run, the learning rule bits are isolated and evaluated on the test tasks (using both the nurturing and non-nurturing conditions) and the weight-encoding bits are isolated and evaluated on the evolutionary tasks.
 
-Parameters of the Genetic Algorithm
+\subsection*{Parameters of the Genetic Algorithm}
 
 % TODO: Describe GA used
 % TODO: Describe "segment-wise" crossover used
@@ -140,64 +140,58 @@ Elitism factor: 1
 Number of generations: 4000
 
 % Results
-Results
+\section*{Results}
 
-Results of initial evolutionary runs
+\subsection*{Results of initial evolutionary runs}
 
-Network test
+\subsection*{Network test}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NetworkTestPlot.pdf}
-	\caption{}
+	\caption{Network test on evolutionary tasks.}
 \end{figure}
 
-Non-nurturing fitness test
+\subsection*{Fitness test}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NonNurturingFitnessTestPlot.pdf}
-	\caption{}
+	\caption{Non-nurturing fitness test on test tasks.}
 \end{figure}
-
-Non-nurturing generalization test
-
-\begin{figure}[H]
-	\centering
-	\includegraphics{NonNurturingGeneralizationTestPlot.pdf}
-	\caption{}
-\end{figure}
-
-Non-nurturing learning test
-
-\begin{figure}[H]
-	\centering
-	\includegraphics{NonNurturingLearningTestPlot.pdf}
-	\caption{}
-\end{figure}
-
-Nurturing fitness test
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NurturingFitnessTestPlot.pdf}
-	\caption{}
+	\caption{Nurturing fitness test on test tasks.}
 \end{figure}
 
-Nurturing generalization test
+\subsection*{Generalization test}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{NonNurturingGeneralizationTestPlot.pdf}
+	\caption{Non-nurturing generalization test on test tasks.}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NurturingGeneralizationTestPlot.pdf}
-	\caption{}
+	\caption{Nurturing generalization test on test tasks.}
 \end{figure}
 
-Nurturing learning test
+\subsection*{Learning test}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{NonNurturingLearningTestPlot.pdf}
+	\caption{Non-nurturing learning test on test tasks.}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NurturingLearningTestPlot.pdf}
-	\caption{}
+	\caption{Nurturing learning test on test tasks.}
 \end{figure}
 
 \makebackmatter
