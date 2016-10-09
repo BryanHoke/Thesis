@@ -7,6 +7,10 @@
 \chair{Dr. Dean Hougen}
 
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+
+\graphicspath{ {Figures/} }
 
 \newcommand{\mutationrate}{0.1}
 \newcommand{\crossoverrate}{0.8}
@@ -127,11 +131,74 @@ After each evolutionary run, the learning rule bits are isolated and evaluated o
 Parameters of the Genetic Algorithm
 
 % TODO: Describe GA used
+% TODO: Describe "segment-wise" crossover used
 
 Population size: 40
 Crossover rate: 0.8
 Mutation rate: 0.01
+Elitism factor: 1
 Number of generations: 4000
+
+% Results
+Results
+
+Results of initial evolutionary runs
+
+Network test
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{NetworkTestPlot.pdf}
+	\caption{}
+\end{figure}
+
+Non-nurturing fitness test
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{NonNurturingFitnessTestPlot.pdf}
+	\caption{}
+\end{figure}
+
+Non-nurturing generalization test
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{NonNurturingGeneralizationTestPlot.pdf}
+	\caption{}
+\end{figure}
+
+Non-nurturing learning test
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{NonNurturingLearningTestPlot.pdf}
+	\caption{}
+\end{figure}
+
+Nurturing fitness test
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{NurturingFitnessTestPlot.pdf}
+	\caption{}
+\end{figure}
+
+Nurturing generalization test
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{NurturingGeneralizationTestPlot.pdf}
+	\caption{}
+\end{figure}
+
+Nurturing learning test
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{NurturingLearningTestPlot.pdf}
+	\caption{}
+\end{figure}
 
 \makebackmatter
 \end{document}
