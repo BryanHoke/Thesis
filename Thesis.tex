@@ -218,6 +218,10 @@ In both cases of evaluation the learning rule evolved using the nurturing condit
 %% Generalization test
 \section{Generalization test}
 
+The portion of the chromosome which encodes the learning rule is isolated and evaluated on the test tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the capacity for generalized learning that was evolved.
+
+In both cases of evaluation the learning rule evolved using the nurturing condition outperformed the learning rule evolved using the non-nurturing condition, suggesting that better generalized learning is more likely to evolve using the nurturing case.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics{NonNurturingGeneralizationTestPlot.pdf}
