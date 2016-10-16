@@ -137,8 +137,6 @@ Fitness evaluation for the non-nurturing case:
 
 Fitness of the chromosome is obtained by evaluating its performance on each of the (typically 20) tasks, and taking the mean fitness over all tasks. In this way every chromosome is assigned a fitness between 0 and 100\%.
 
-After each evolutionary run, the learning rule bits are isolated and evaluated on the test tasks (using both the nurturing and non-nurturing conditions) and the weight-encoding bits are isolated and evaluated on the evolutionary tasks.
-
 %%% Parameters of the Genetic Algorithm
 \subsection{Parameters of the Genetic Algorithm}
 
@@ -150,6 +148,11 @@ Crossover rate: 0.8
 Mutation rate: 0.01
 Elitism factor: 1
 Number of generations: 4000
+
+%%% Post-Evolutionary Evaluation
+\subsection{Post-Evolutionary Evaluation}
+
+Before each evolutionary run, 10 tasks are selected from the task pool and designated as "test tasks". After each evolutionary run, the chromosome with the highest fitness score in the history of the populations in that run is identified. From this chromosome, the learning rule bits are isolated and evaluated on the test tasks (using both the nurturing and non-nurturing conditions) and the weight-encoding bits are isolated and evaluated on the evolutionary tasks.
 
 % Results
 \chapter{Results}
