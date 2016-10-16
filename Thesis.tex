@@ -163,6 +163,12 @@ Before each evolutionary run, 10 tasks are selected from the task pool and desig
 %% Fitness test
 \section{Fitness test}
 
+The best individual is re-evaluated on the evolutionary tasks using both the nurturing and non-nurturing conditions (recall that it is evaluated using only one of these conditions during evolution).
+
+In both cases it is clear that the objective function becomes more difficult to satisfy as the number of evolutionary tasks increases. 
+
+Individuals evolved using the non-nurturing case perform better when re-evaluated using the non-nurturing case than when using the nurturing case, and individuals evolved using the nurturing case perform better when re-evaluated using the nurturing case than when using the non-nurturing case.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics{NonNurturingFitnessTestPlot.pdf}
