@@ -198,6 +198,11 @@ Chromosomes evolved using the non-nurturing condition performed better on this e
 %% Learning test
 \section{Learning test}
 
+The portion of the chromosome which encodes the learning rule is isolated and evaluated on the evolutionary tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the contribution of the portion of the chromosome which encodes the learning rule to the fitness of the whole chromosome.
+
+In both cases of evaluation the learning rule evolved using the nurturing condition performed better than the learning rule evolved using the non-nurturing condition, suggesting that the learning rule makes a larger contribution to fitness in the nurturing case than in the non-nurturing case.
+% TODO: Suggest that learning plays a somewhat more important role in the nurturing case?
+
 \begin{figure}[H]
 	\centering
 	\includegraphics{NonNurturingLearningTestPlot.pdf}
