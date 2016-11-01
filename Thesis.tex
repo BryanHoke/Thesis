@@ -33,6 +33,18 @@ Instincts will be more likely to evolve than learning for small amounts of tasks
 
 The introduction of the ability to evolve initial network weights alongside learning rules allows for the evolution of "instincts" as an alternate strategy to learning. Learning will be more likely to evolve in the nurturing condition than in the non-nurturing condition because of the costs associated with the learning process in the non-nurturing condition. 
 
+% Operational Definitions
+\chapter{Operational Definitions}
+
+Instincts are to be represented by the genetically encoded initial weights of a network.
+
+Learning is to be represented by the genetically encoded learning rule that is applied to a network throughout its lifetime.
+
+For evolved networks where both initial weights and learning rules are genetically encoded, instincts are measured by removing the learning rule and evaluating the fitness of the network in the environment in which it was evolved.
+For the same networks, learning ability is measured by replacing the genetically encoded initial weights with random initial weights and evaluating the fitness of the network in the environment in which it was evolved; generalized learning ability is measured by evaluating the fitness of this instinct-removed network in an environment different from the one in which it was evolved.
+
+By default, mistakes made by a network during learning will count against its lifetime fitness; this is the "non-nurturing" condition.
+In the "nurturing" condition, then, mistakes made by a network during learning will not count against its lifetime fitness.
 
 % Procedure
 \chapter{Procedure}
