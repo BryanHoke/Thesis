@@ -221,6 +221,20 @@ Networks evolved using the non-nurturing condition performed better on this eval
 	\caption{Network test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
 
+%% Learning Improvement
+\section{Learning Improvement}
+
+To determine the average amount of useful learning that evolves for a given number of tasks we can examine the difference between the evolutionary fitness and the network fitness.
+This is because the network fitness is essentially the same as an individual's fitness before it undergoes learning processes, whereas the evolutionary fitness is an individual's fitness after it undergoes learning processes.
+
+As shown in Figure 4.4, the improvement in fitness due to learning increases as the number of evolutionary tasks increases. This suggests that learning becomes an increasingly important evolutionary strategy as the environment becomes more varied.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{LearningImprovementPlot.pdf}
+	\caption{The difference between evolutionary fitness and network fitness for individuals evolved under the nurturing condition.}
+\end{figure}
+
 %% Learning test
 \section{Learning test}
 
