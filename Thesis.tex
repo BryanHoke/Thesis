@@ -32,13 +32,13 @@ This work examines how the introduction of a "nurturing" condition -- where mist
 %% Genetic Algorithms
 \section{Genetic Algorithms}
 
-- Motivation
+%- Motivation
 
-- Overview
+%- Overview
 
-- Selection operators
+%- Selection operators
 
-- Reproductive operators
+%- Reproductive operators
 
 Genetics algorithms are a class of search algorithms inspired by the process of evolution by natural selection.
 Solutions to a problem are encoded in strings referred to as chromosomes.
@@ -51,8 +51,71 @@ This process is repeated until some stopping condition is met, typically after a
 %% Neural Networks
 \section{Neural Networks}
 
+Artificial neural networks are a method of performing computation inspired by the biological neural networks found in nature.
+They are implemented as networks of computational units, referred to as artificial neurons, which transform inputs and propagate information to each other through weighted connections.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.1]{ArtificialNeuron.pdf}
+	\caption{An artificial neuron.}
+	\label{fig:neuron}
+\end{figure}
+
+Figure \ref{fig:neuron} depicts an artificial neuron with $I$ inputs, one output, and an activation function $f_{AN}$. The neuron receives a vector of $I+1$ input signals, $\mathbf{a}=(a_1, a_2, \ldots, a_I, a_{I+1})$, where $a_{I+1}$ is known as a \emph{bias unit} and always has a value of $-1$.  The input vector is modulated by a weight vector, $\mathbf{w}=(w_1, w_2, \ldots, w_I, w_{I+1})$, where each weight $w_i$ modulates the input signal $a_i$. The neuron computes the net input as the sum of the weighted input signals, giving
+\begin{equation}
+net=\sum_{i=1}^{I+1}a_iw_i
+\end{equation}
+The output signal, $o$, is then computed by applying the activation function to the weighted input, so that $o=f_{AN}(net)$.
+
+\begin{equation}
+\mathcal{E} = \sum_{p=1}^{P_T}(t_p-o_p)^2
+\end{equation}
+
+A common choice for $f_{AN}$ is the sigmoid function:
+
+\begin{equation}
+f_{AN}(net) = \frac{1}{1 + e^{-\lambda net}}
+\end{equation}
+
+where the parameter $\lambda$ influences the steepness of the function, but usually $\lambda = 1$.
+
+When coupled with learning rules that update the values of weights, artificial neurons can learn discrete functions.
+An example of such a learning rule is the well-known delta learning rule.
+
+Given a single training pattern, weights are updated using
+
+\begin{equation}
+w_i(t) = w_i(t - 1) + \Delta w_i(t)
+\end{equation}
+
+with
+
+\begin{equation}
+\Delta w_i(t) = \eta(- \frac{\partial \mathcal{E}}{\partial w_i})
+\end{equation}
+
+where
+
+\begin{equation}
+\frac{\partial \mathcal{E}}{\partial w_i} = -2(t_p - o_p)\frac{\partial f_{AN}}{\partial net_p}a_{i,p}
+\end{equation}
+
+If we use the sigmoid function for $f_{AN}$ then
+
+\begin{equation}
+\frac{\partial f_{AN}}{\partial net_p} = o_p(1 - o_p)
+\end{equation}
+
+giving
+
+\begin{equation}
+\frac{\partial \mathcal{E}}{\partial w_i} = -2(t_p - o_p)o_p(1 - o_p)a_{i,p}
+\end{equation}
+
 %% Neuroevolution
 \section{Neuroevolution}
+
+Neural network connection strengths, topology, and learning rules can be encoded by strings, meaning they can be evolved by genetic algorithms.
 
 %% The Evolution of Learning
 \section{The Evolution of Learning}
