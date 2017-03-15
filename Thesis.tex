@@ -67,10 +67,6 @@ net=\sum_{i=1}^{I+1}a_iw_i
 \end{equation}
 The output signal, $o$, is then computed by applying the activation function to the weighted input, so that $o=f_{AN}(net)$.
 
-\begin{equation}
-\mathcal{E} = \sum_{p=1}^{P_T}(t_p-o_p)^2
-\end{equation}
-
 A common choice for $f_{AN}$ is the sigmoid function:
 
 \begin{equation}
@@ -79,8 +75,21 @@ f_{AN}(net) = \frac{1}{1 + e^{-\lambda net}}
 
 where the parameter $\lambda$ influences the steepness of the function, but usually $\lambda = 1$.
 
-When coupled with learning rules that update the values of weights, artificial neurons can learn discrete functions.
-An example of such a learning rule is the well-known delta learning rule.
+Artificial neurons can be used to compute linearly separable functions without error. This means that, for such a function, there exists at least one threshold value such that the neuron can separate the space of $I$-dimensional input vectors which produce an above-threshold output from those which produce a below-threshold output by an $I$-dimensional hyperplane. This threshold is determined by the bias weight $w_{I+1}$, meaning that the neuron can be used to separate the input vectors for which $net > 0$ from the input vectors for which $net < 0$.
+
+Learning is a technique where the weights of an artificial neuron are updated to realize functions given by data.
+One type of learning is known as supervised learning, where the neuron is provided with a data set (known as the training set) consisting of training patterns of input vectors with associated target outputs.
+The weights of the neuron are then adjusted until the error between the actual outputs of the neuron and the target outputs in the patterns is minimized.
+
+An example of a supervised learning rule is the so-called delta rule.
+The delta rule requires the definition of an error (or objective) function, $\mathcal{E}$, to measure the neuron's error in approximating training targets.
+The sum of squared errors is usually used, given by
+
+\begin{equation}
+\mathcal{E} = \sum_{p=1}^{P_T}(t_p-o_p)^2
+\end{equation}
+
+where $t_p$ and $o_p$ are the target and actual output for the $p$th pattern, and $P_T$ is the total number of patterns in the training set.
 
 Given a single training pattern, weights are updated using
 
@@ -100,7 +109,9 @@ where
 \frac{\partial \mathcal{E}}{\partial w_i} = -2(t_p - o_p)\frac{\partial f_{AN}}{\partial net_p}a_{i,p}
 \end{equation}
 
-If we use the sigmoid function for $f_{AN}$ then
+and $\eta$ is a constant known as the learning rate, $net_p$ is the net input for pattern $p$, and $a_{i,p}$ is the $i$th input signal in pattern $p$.
+
+The delta rule requires that its activation function $f_{AN}$ is continuous and differentiable. If we use the sigmoid function for $f_{AN}$ then
 
 \begin{equation}
 \frac{\partial f_{AN}}{\partial net_p} = o_p(1 - o_p)
