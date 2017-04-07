@@ -137,12 +137,33 @@ Any feature of an artificial neuron can be subjected to an evolutionary process 
 such as connection weights, architectures, learning rules, and input features [Yao].
 However, this work will focus on the evolution of connection weights and learning rules.
 
-Chalmers evolved learning rules by encoding the parameters of a template formula as strings.
+The connection weights of a non-learning neuron can be evolved as the hard-coded behavior of that neuron. 
+This is analogous to the evolution of instincts or what we think of as "hard-wired" behavior.
 
-Chalmers demonstrated that the delta learning rule can be evolved in certain situations for supervised networks.
+The initial connection weights of a learning neuron can be evolved as the initial behavior which will be modified by the neuron's learning rule. 
+This can be beneficial for evolving passably fit initial behavior that is then fine-tuned by learning,
+but it can also be the case that the values of the initial weights are not adaptive and weights are evolved that are effectively random 
+[Note: Mention something from nature as an example, like imprinting?]
+
+Learning rules can be evolved stand-alone by applying them to neurons initialized with random [Note: or hard-coded?] weights in the fitness function.
+In this situation the values of the initial weights do not matter because the idea is to evolve learning rules that will converge on a solution that is independent of the values of the starting weights.
+
+The initial connection weights and the learning rules that modify them can be evolved simultaneously.
+In this situation, instincts, learning, or a combination of both can all be evolved depending on the problem and the fitness environment.
+This work will examine the outcomes of the simultaneous evolution of connection weights and learning rules under different conditions.
 
 %% The Evolution of Learning
 \section{The Evolution of Learning}
+
+If an environment is sufficiently diverse or dynamic, instinctual behavior is not reasonably sufficient for good task performance.
+
+Evolved learning behavior that is scalable and adaptive to unknown or changing situations can be seen by countless species in nature. [Shah?]
+
+Evolution is another form of adaptation in addition to learning.
+
+Chalmers evolved learning rules by encoding the parameters of a template formula as strings.
+
+Chalmers demonstrated that the delta learning rule can be evolved in certain situations for supervised networks.
 
 %% Nurturing
 \section{Nurturing}
@@ -157,7 +178,7 @@ Eskridge \& Hougen (2012) conducted experiments involving food patch estimation 
 
 Nurturing can cover the initial costs of a learner and the resulting benefits of learning can be paid forward to the next generation. In this way, nurturing can promote the evolution of learning.
 
-
+Shah [citation] demonstrated that nurturing can promote the evolution of learning in changing environments.
 
 % Hypothesis
 \chapter{Hypothesis}
