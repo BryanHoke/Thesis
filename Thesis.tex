@@ -134,13 +134,13 @@ giving
 
 % Neural network connection strengths, topology, and learning rules can be encoded by strings, meaning they can be evolved by genetic algorithms.
 Any feature of an artificial neuron can be subjected to an evolutionary process after being string-encoded,
-such as connection weights, architectures, learning rules, and input features [Yao].
+such as connection weights, architectures, learning rules, and input features \cite{Yao:1999lp}.
 However, this work will focus on the evolution of connection weights and learning rules.
 
 The connection weights of a non-learning neuron can be evolved as the hard-coded behavior of that neuron. 
 This is analogous to the evolution of instincts or what we think of as "hard-wired" behavior.
 
-The initial connection weights of a learning neuron can be evolved as the initial behavior which will be modified by the neuron's learning rule. 
+The initial connection weights of a learning neuron can be evolved as the initial behavior which will be modified by the neuron's learning rule.
 This can be beneficial for evolving passably fit initial behavior that is then fine-tuned by learning,
 but it can also be the case that the values of the initial weights are not adaptive and weights are evolved that are effectively random 
 [Note: Mention something from nature as an example, like imprinting?]
@@ -161,9 +161,9 @@ Evolved learning behavior that is scalable and adaptive to unknown or changing s
 
 Evolution is another form of adaptation in addition to learning.
 
-Chalmers evolved learning rules by encoding the parameters of a template formula as strings.
+Chalmers \cite{chalmers-evolution-learning} evolved learning rules by encoding the parameters of a template formula as strings.
 
-Chalmers demonstrated that the delta learning rule can be evolved in certain situations for supervised networks.
+Chalmers \cite{chalmers-evolution-learning} demonstrated that the delta learning rule can be evolved in certain situations for supervised networks.
 
 Shah \cite{Shah:2015hs} demonstrated the evolution of unsupervised and reinforcement learning in changing environments.
 
@@ -172,15 +172,15 @@ Shah \cite{Shah:2015hs} demonstrated the evolution of unsupervised and reinforce
 
 Nurturing is prevalent in the biological world.
 
-Nurturing is defined as "the contribution of time, energy, or other resources by one individual to the expected physical, mental, social, or other development of another individual with which it has an ongoing relationship" [Woehrer].
+Nurturing is defined as "the contribution of time, energy, or other resources by one individual to the expected physical, mental, social, or other development of another individual with which it has an ongoing relationship" \cite{nurturing-definition}.
 
-Nurturing can be an important contributing factor to the evolution of learning (Woehrer et al., 2012; Eskridge \& Hougen, 2012). 
+Nurturing can be an important contributing factor to the evolution of learning \cite{nurturing-definition} \cite{eskridge-learning-uncertain-environments}. 
 
-Eskridge \& Hougen (2012) conducted experiments involving food patch estimation in uncertain environments, and their results demonstrated that nurturing as both social learning and safe exploration can promote the evolution of learning. 
+Eskridge \& Hougen \cite{eskridge-learning-uncertain-environments} conducted experiments involving food patch estimation in uncertain environments, and their results demonstrated that nurturing as both social learning and safe exploration can promote the evolution of learning. 
 
 Nurturing can cover the initial costs of a learner and the resulting benefits of learning can be paid forward to the next generation. In this way, nurturing can promote the evolution of learning.
 
-Shah [citation] demonstrated that nurturing can promote the evolution of learning in changing environments.
+Shah \cite{Shah:2015hs} demonstrated that nurturing can promote the evolution of learning in changing environments.
 
 % Hypothesis
 \chapter{Hypothesis}
@@ -471,5 +471,9 @@ this is not necessarily a good effect if it is desirable for the individuals to 
 
 Nurturing can reduce the evolutionary costs of learning and thus may be able to inhibit the Baldwin effect.
 Inhibiting the Baldwin effect may result in evolved individuals that have greater adaptive capabilities.
+
+\bibliography{Bibliography}{}
+\bibliographystyle{plain}
+
 \makebackmatter
 \end{document}
