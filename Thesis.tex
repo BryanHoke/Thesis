@@ -24,11 +24,14 @@
 % Introduction
 \chapter{Introduction}
 
-Chalmers \cite{chalmers-evolution-learning} demonstrated that evolutionary processes can produce systems that learn.
-However, in Chalmers's work learning was the only phenotypic strategy that could emerge from evolution.
+Chalmers \cite{chalmers-evolution-learning} demonstrated that evolutionary processes can produce artificial systems that learn.
+The learning that emerged could be either specific to certain tasks or generalized for any task in the problem space.
+Learning could also not emerge if none of the behavior adjustment rules evolved performed better than adjusting behavior randomly.
+However, in Chalmers's work learning was the only viable phenotypic strategy that could emerge from evolution.
 If other strategies, such as hard-coded behavior, were able to emerge alongside the strategy of learning, it might be found that learning is not always the strategy that emerges from evolution.
 Presumably, the evolutionary environment (or objective function) would have the effect of influencing which strategies are more likely to emerge; after all, it is reasonable to think that no one strategy would always be optimal for every possible kind of environment.
-This work examines how the introduction of a "nurturing" condition -- where mistakes made during learning are not penalized -- into the environment influences the evolution of learning as opposed to an "instinctual" strategy where behavior is hard-coded.
+This work examines how the introduction of a ``nurturing" condition -- where mistakes made during learning are not penalized -- into the environment influences the evolution of learning as opposed to an ``instinctual" strategy where behavior is hard-coded.
+It examines also whether learning is less likely to evolve when both instincts and learning have the potential to emerge.
 
 %% Genetic Algorithms
 \section{Genetic Algorithms}
@@ -41,10 +44,10 @@ This work examines how the introduction of a "nurturing" condition -- where mist
 
 %- Reproductive operators
 
-Genetics algorithms are a class of search algorithms inspired by the process of evolution by natural selection.
-Solutions to a problem are encoded in strings referred to as chromosomes.
+\emph{Genetic algorithms} are a class of search algorithms inspired by the process of evolution by natural selection.
+Solutions to a problem are encoded in strings referred to as \emph{chromosomes}.
 The procedure begins with a population of chromosomes which are typically randomly generated.
-The chromosomes are evaluated by an objective function referred to as the fitness function to determine the fitness value of each one.
+The chromosomes are evaluated by an objective function referred to as the \emph{fitness function} to determine the fitness value of each one.
 A process of selection is used to determine the chromosomes which will reproduce into the next generation based on their fitness values.
 The selected chromosomes then undergo a process of mutation in order to explore the problem space.
 This process is repeated until some stopping condition is met, typically after a certain number of generations.
@@ -58,7 +61,7 @@ This process is repeated until some stopping condition is met, typically after a
 %% Artificial Neurons
 \section{Artificial Neurons}
 
-Artificial neurons networks are a method of performing computation inspired by the biological neurons found in nature.
+Artificial neurons are computational elements inspired by the biological neurons found in nature.
 An artificial neuron is comprised of a number of weighted input connections, an activation function which implements a response to input, and a number of output connections.
 
 \begin{figure}[H]
@@ -85,11 +88,11 @@ where the parameter $\lambda$ influences the steepness of the function, but usua
 Artificial neurons can be used to compute linearly separable functions without error. This means that, for such a function, there exists at least one threshold value such that the neuron can separate the space of $I$-dimensional input vectors which produce an above-threshold output from those which produce a below-threshold output by an $I$-dimensional hyperplane. This threshold is determined by the bias weight $w_{I+1}$, meaning that the neuron can be used to separate the input vectors for which $net > 0$ from the input vectors for which $net < 0$.
 
 Learning is a technique where the weights of an artificial neuron are updated to realize functions given by data.
-One type of learning is known as supervised learning, where the neuron is provided with a data set (known as the training set) consisting of training patterns of input vectors with associated target outputs.
+One type of learning is known as \emph{supervised learning}, where the neuron is provided with a data set (known as the \emph{training set}) consisting of training patterns of input vectors with associated target outputs.
 The weights of the neuron are then adjusted until the error between the actual outputs of the neuron and the target outputs in the patterns is minimized.
 
-An example of a supervised learning rule is the so-called delta rule.
-The delta rule requires the definition of an error (or objective) function, $\mathcal{E}$, to measure the neuron's error in approximating training targets.
+An example of a supervised learning rule is the so-called \emph{delta rule}.
+The delta rule requires the definition of an error function, $\mathcal{E}$, to measure the neuron's error in approximating training targets.
 The sum of squared errors is usually used, given by
 
 \begin{equation}
@@ -135,11 +138,11 @@ giving
 
 % Neural network connection strengths, topology, and learning rules can be encoded by strings, meaning they can be evolved by genetic algorithms.
 Any feature of an artificial neuron can be subjected to an evolutionary process after being string-encoded,
-such as connection weights, architectures, learning rules, and input features \cite{Yao:1999lp}.
+such as connection weights, activation functions, learning rules, and input features \cite{Yao:1999lp}.
 However, this work will focus on the evolution of connection weights and learning rules.
 
-The connection weights of a non-learning neuron can be evolved as the hard-coded behavior of that neuron. 
-This is analogous to the evolution of instincts or what we think of as "hard-wired" behavior.
+The connection weights of a non-learning neuron can be evolved as the hard-coded response to input of that neuron. 
+This is analogous to the evolution of instincts or what we think of as ``hard-wired" behavior.
 
 The initial connection weights of a learning neuron can be evolved as the initial behavior which will be modified by the neuron's learning rule.
 This can be beneficial for evolving passably fit initial behavior that is then fine-tuned by learning,
@@ -173,7 +176,7 @@ Shah \cite{Shah:2015hs} demonstrated the evolution of unsupervised and reinforce
 
 Nurturing is prevalent in the biological world.
 
-Nurturing is defined as "the contribution of time, energy, or other resources by one individual to the expected physical, mental, social, or other development of another individual with which it has an ongoing relationship" \cite{nurturing-definition}.
+Nurturing is defined as ``the contribution of time, energy, or other resources by one individual to the expected physical, mental, social, or other development of another individual with which it has an ongoing relationship" \cite{nurturing-definition}.
 
 Nurturing can be an important contributing factor to the evolution of learning \cite{nurturing-definition} \cite{eskridge-learning-uncertain-environments}. 
 
@@ -194,7 +197,7 @@ Nurturing alone will have little impact on the evolution of learning because lea
 
 Instincts will be more likely to evolve than learning for small amounts of tasks, but learning will become more likely to evolve than instincts as the number of tasks increases. This will be because there will be a smaller number of instinct genes than learning genes to "tune" to a correct solution for small number of tasks, but because the number of genes required to represent instincts will increase as the number of tasks increases the number of instinct genes will become much larger than the number of learning genes as the number of tasks increases.
 
-The introduction of the ability to evolve initial network weights alongside learning rules allows for the evolution of "instincts" as an alternate strategy to learning. Learning will be more likely to evolve in the nurturing condition than in the non-nurturing condition because of the costs associated with the learning process in the non-nurturing condition. 
+The introduction of the ability to evolve initial network weights alongside learning rules allows for the evolution of ``instincts" as an alternate strategy to learning. Learning will be more likely to evolve in the nurturing condition than in the non-nurturing condition because of the costs associated with the learning process in the non-nurturing condition. 
 
 % Operational Definitions
 \chapter{Operational Definitions}
@@ -206,8 +209,8 @@ Learning is to be represented by the genetically encoded learning rule that is a
 For evolved networks where both initial weights and learning rules are genetically encoded, instincts are measured by removing the learning rule and evaluating the fitness of the network in the environment in which it was evolved.
 For the same networks, learning ability is measured by replacing the genetically encoded initial weights with random initial weights and evaluating the fitness of the network in the environment in which it was evolved; generalized learning ability is measured by evaluating the fitness of this instinct-removed network in an environment different from the one in which it was evolved.
 
-By default, mistakes made by a network during learning will count against its lifetime fitness; this is the "non-nurturing" condition.
-In the "nurturing" condition, then, mistakes made by a network during learning will not count against its lifetime fitness.
+By default, mistakes made by a network during learning will count against its lifetime fitness; this is the ``non-nurturing" condition.
+In the ``nurturing" condition, then, mistakes made by a network during learning will not count against its lifetime fitness.
 
 % Procedure
 \chapter{Procedure}
