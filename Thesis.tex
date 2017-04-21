@@ -26,12 +26,25 @@
 
 Chalmers \cite{chalmers-evolution-learning} demonstrated that evolutionary processes can produce artificial systems that learn.
 The learning that emerged could be either specific to certain tasks or generalized for any task in the problem space.
-Learning could also not emerge if none of the behavior adjustment rules evolved performed better than adjusting behavior randomly.
-However, in Chalmers's work learning was the only viable phenotypic strategy that could emerge from evolution.
-If other strategies, such as hard-coded behavior, were able to emerge alongside the strategy of learning, it might be found that learning is not always the strategy that emerges from evolution.
-Presumably, the evolutionary environment (or objective function) would have the effect of influencing which strategies are more likely to emerge; after all, it is reasonable to think that no one strategy would always be optimal for every possible kind of environment.
-This work examines how the introduction of a ``nurturing" condition -- where mistakes made during learning are not penalized -- into the environment influences the evolution of learning as opposed to an ``instinctual" strategy where behavior is hard-coded.
-It examines also whether learning is less likely to evolve when both instincts and learning have the potential to emerge.
+It was also possible that learning might not emerge if none of the behavior adjustment rules evolved performed better than adjusting behavior randomly.
+
+In Chalmers's work, learning was the only viable phenotypic strategy that could emerge from evolution.
+But, If other strategies, such as hard-coded behavioral responses, were able to emerge alongside the strategy of learning, it might be found that learning is not always the strategy that emerges from evolution.
+Presumably, the evolutionary environment (or objective function) would have the effect of influencing which strategies are more likely to emerge; after all, it is reasonable to think that no one strategy would always be optimal for every possible kind of environment. % TODO: Check writing style
+
+A disadvantage of learning is that individuals tend to have low fitness early in their life before they have had the opportunity to learn correct behavior.
+This is in contrast to individuals that exhibit instinctive behavior and have high fitness at the start of life.
+Such effects could make it less likely for learning to evolve in favor of instinctual behavior.
+
+However, if the penalties incurred during the early stages of learning could be mitigated then learning may be more likely to evolve.
+In the biological world this can be observed in the form of nurturing, often from a parent to a child.
+In this way, nurturing may increase the competitive viability of learning by protecting the learner from otherwise fatal errors made before proper behavior has been acquired \cite{nurturing-definition}.
+                                                                                                                                    
+This work examines whether learning is less likely to evolve when both instincts and learning have the potential to emerge,
+and how the introduction into the environment of a ``nurturing" condition -- where mistakes made during learning are not penalized -- influences the evolution of learning as opposed to an ``instinctual" strategy where behavior is hard-coded.
+% TODO: Footnote that instincts will be operationally defined later
+
+To explore these questions, this work uses a combination of genetic algorithms and artificial neurons applied to a set of supervised learning tasks (the same tasks, in fact, that were used by Chalmers). The rest of this chapter introduces the following topics, in turn: genetic algorithms, artificial neurons, neuroevolution, the evolution of learning, and nurturing.
 
 %% Genetic Algorithms
 \section{Genetic Algorithms}
@@ -47,9 +60,14 @@ It examines also whether learning is less likely to evolve when both instincts a
 \emph{Genetic algorithms} are a class of search algorithms inspired by the process of evolution by natural selection.
 Solutions to a problem are encoded in strings referred to as \emph{chromosomes}.
 The procedure begins with a population of chromosomes which are typically randomly generated.
-The chromosomes are evaluated by an objective function referred to as the \emph{fitness function} to determine the fitness value of each one.
+The chromosomes are evaluated by an objective function -- the problem to be solved -- referred to as the \emph{fitness function} to determine the fitness value of each one.
+The goal of the genetic algorithm is to find the chromosome which maximizes the fitness function and has the highest fitness;
+in this sense, a genetic algorithm can be used as a search algorithm that looks for the best solution for an objective function.
 A process of selection is used to determine the chromosomes which will reproduce into the next generation based on their fitness values.
-The selected chromosomes then undergo a process of mutation in order to explore the problem space.
+
+The selection chromosomes then reproduce to create the next-generation population.
+One operation used in reproduction is \emph{crossover}, where segments of two chromosomes are combined to create a new chromosome.
+The offspring chromosomes also undergo a process of \emph{mutation}, where each gene has its value changed with some probability, in order to explore the problem space.
 This process is repeated until some stopping condition is met, typically after a certain number of generations.
 
 \begin{figure}[H]
@@ -85,7 +103,7 @@ f_{AN}(net) = \frac{1}{1 + e^{-\lambda net}}
 
 where the parameter $\lambda$ influences the steepness of the function, but usually $\lambda = 1$.
 
-Artificial neurons can be used to compute linearly separable functions without error. This means that, for such a function, there exists at least one threshold value such that the neuron can separate the space of $I$-dimensional input vectors which produce an above-threshold output from those which produce a below-threshold output by an $I$-dimensional hyperplane. This threshold is determined by the bias weight $w_{I+1}$, meaning that the neuron can be used to separate the input vectors for which $net > 0$ from the input vectors for which $net < 0$.
+Artificial neurons can be used to compute linearly separable functions without error. This means that, for such a function, there exists at least one threshold value such that the neuron can separate the space of $I$-dimensional input vectors which produce an above-threshold output from those which produce a below-threshold output by an $I$-dimensional hyperplane. This threshold is determined by the bias weight $w_{I+1}$, meaning that the neuron can be used to separate the input vectors for which $net > 0$ from the input vectors for which $net \le 0$.
 
 Learning is a technique where the weights of an artificial neuron are updated to realize functions given by data.
 One type of learning is known as \emph{supervised learning}, where the neuron is provided with a data set (known as the \emph{training set}) consisting of training patterns of input vectors with associated target outputs.
