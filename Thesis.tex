@@ -139,7 +139,9 @@ where
 
 and $\eta$ is a constant known as the learning rate, $net_p$ is the net input for pattern $p$, and $a_{i,p}$ is the $i$th input signal in pattern $p$.
 
-The delta rule requires that its activation function $f_{AN}$ is continuous and differentiable. If we use the sigmoid function for $f_{AN}$ then
+The delta rule requires that its activation function $f_{AN}$ is continuous and differentiable;
+this is so the gradient of the error can be followed toward lower values, giving the direction in which the weights should be updated.
+If we use the sigmoid function for $f_{AN}$ then
 
 \begin{equation}
 \frac{\partial f_{AN}}{\partial net_p} = o_p(1 - o_p)
@@ -150,6 +152,9 @@ giving
 \begin{equation}
 \frac{\partial \mathcal{E}}{\partial w_i} = -2(t_p - o_p)o_p(1 - o_p)a_{i,p}
 \end{equation}
+
+Artificial neurons are generally connected together into artificial neural networks to perform more sophisticated computation;
+however, this work is based closely on the work of Chalmers which considered single neurons in isolation \cite{chalmers-evolution-learning}.
 
 %% Neuroevolution
 \section{Neuroevolution}
@@ -177,15 +182,16 @@ This work will examine the outcomes of the simultaneous evolution of connection 
 %% The Evolution of Learning
 \section{The Evolution of Learning}
 
-If an environment is sufficiently diverse or dynamic, instinctual behavior is not reasonably sufficient for good task performance.
+If an environment is sufficiently diverse or dynamic, instinctual behavior is not reasonably sufficient for good task performance;
+this is because such an environment will invariably present novel tasks to which the instinctual behavior is not well-adapted.
 
 Evolved learning behavior that is scalable and adaptive to unknown or changing situations can be seen by countless species in nature. [Shah?]
 
-Evolution is another form of adaptation in addition to learning.
+Evolution is another form of adaptation in addition to learning. % TODO: Explain the similarities and differences between them
 
-Chalmers \cite{chalmers-evolution-learning} evolved learning rules by encoding the parameters of a template formula as strings.
+Chalmers \cite{chalmers-evolution-learning} evolved learning rules by encoding the parameters of a template formula as strings, demonstrating that the delta learning rule can be evolved in certain situations for supervised networks.
 
-Chalmers \cite{chalmers-evolution-learning} demonstrated that the delta learning rule can be evolved in certain situations for supervised networks.
+% TODO: Say more about the work of both Chalmers and Shaw. 5Also, add in mentions (and citations) for several other papers on the evolution of learning.
 
 Shah \cite{Shah:2015hs} demonstrated the evolution of unsupervised and reinforcement learning in changing environments.
 
@@ -203,6 +209,10 @@ Eskridge \& Hougen \cite{eskridge-learning-uncertain-environments} conducted exp
 Nurturing can cover the initial costs of a learner and the resulting benefits of learning can be paid forward to the next generation. In this way, nurturing can promote the evolution of learning.
 
 Shah \cite{Shah:2015hs} demonstrated that nurturing can promote the evolution of learning in changing environments.
+
+% TODO: Explain which type of nurturing I explore
+
+% TODO: Conclude the introduction with a section outlining what is to come in the rest of the thesis.
 
 % Hypothesis
 \chapter{Hypothesis}
