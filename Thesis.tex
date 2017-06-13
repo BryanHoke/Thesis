@@ -161,24 +161,23 @@ however, this work is based closely on the work of Chalmers which considered sin
 \section{Neuroevolution}
 
 % Neural network connection strengths, topology, and learning rules can be encoded by strings, meaning they can be evolved by genetic algorithms.
-Any feature of an artificial neuron can be subjected to an evolutionary process after being string-encoded,
-such as connection weights, activation functions, learning rules, and input features \cite{Yao:1999lp}.
+Any feature of an artificial neuron, such as connection weights, activation functions, learning rules, and input features, can be subjected to an evolutionary process after being string-encoded \cite{Yao:1999lp}.
 However, this work will focus on the evolution of connection weights and learning rules.
 
-The connection weights of a non-learning neuron can be evolved as the hard-coded response to input of that neuron. 
+The connection weights of a non-learning neuron can be evolved as the fixed response of that neuron to input.
 This is analogous to the evolution of instincts or what we think of as ``hard-wired" behavior.
 
-The initial connection weights of a learning neuron can be evolved as the initial behavior which will be modified by the neuron's learning rule.
-This can be beneficial for evolving passably fit initial behavior that is then fine-tuned by learning,
-but it can also be the case that the values of the initial weights are not adaptive and weights are evolved that are effectively random 
-[Note: Mention something from nature as an example, like imprinting?]
+Alternately, the initial connection weights of a learning neuron can be evolved as the initial behavior which will be modified by the neuron's learning rule.
+This can be beneficial for evolving passably fit initial behavior that is then fine-tuned by learning
+but it can also be the case that the values of the initial weights are not adaptive and weights are evolved that are effectively random.
 
 Learning rules can be evolved stand-alone by applying them to neurons initialized with random weights in the fitness function.
 In this situation the values of the initial weights do not matter because the idea is to evolve learning rules that will converge on a solution that is independent of the values of the starting weights.
 
 The initial connection weights and the learning rules that modify them can be evolved simultaneously.
-In this situation, instincts, learning, or a combination of both can all be evolved depending on the problem and the fitness environment.
-This work will examine the outcomes of the simultaneous evolution of connection weights and learning rules under different conditions.
+In this situation, instincts, learning, or a combination of both can be evolved depending on the environment.
+This work will examine the outcomes of the simultaneous evolution of connection weights and learning rules under different conditions,
+whereas Chalmers examined only the possibility of evolving learning rules.
 
 %% The Evolution of Learning
 \section{The Evolution of Learning}
