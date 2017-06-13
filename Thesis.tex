@@ -86,9 +86,12 @@ This process is repeated until some stopping condition is met, typically after a
 %% Artificial Neurons
 \section{Artificial Neurons}
 
+% TODO: Cite at least one work in this section besides Chalmers, looking for foundational works on ANs and the delta rule and a modern textbook or tutorial or survey paper that covers both 
+
 Artificial neurons are computational elements inspired by the biological neurons found in nature.
 An artificial neuron is comprised of a number of weighted input connections, an activation function which implements a response to input, and a number of output connections.
 
+% TODO: Match the font in this figure to the font in the text
 \begin{figure}[H]
 	\centering
 	\includegraphics{ArtificialNeuron.pdf}
@@ -97,68 +100,59 @@ An artificial neuron is comprised of a number of weighted input connections, an 
 \end{figure}
 
 Figure \ref{fig:neuron} depicts an artificial neuron with $I$ inputs, one output, and an activation function $f_{AN}$. The neuron receives a vector of $I+1$ input signals, $\mathbf{a}=(a_1, a_2, \ldots, a_I, a_{I+1})$, where $a_{I+1}$ is known as a \emph{bias unit} and always has a value of $-1$.  The input vector is modulated by a weight vector, $\mathbf{w}=(w_1, w_2, \ldots, w_I, w_{I+1})$, where each weight $w_i$ modulates the input signal $a_i$. The neuron computes the net input as the sum of the weighted input signals, giving
-\begin{equation}
-net=\sum_{i=1}^{I+1}a_iw_i
-\end{equation}
+\begin{displaymath}
+net=\sum_{i=1}^{I+1}a_iw_i.
+\end{displaymath}
 The output signal, $o$, is then computed by applying the activation function to the weighted input, so that $o=f_{AN}(net)$.
 
 A common choice for $f_{AN}$ is the sigmoid function:
 
-\begin{equation}
+\begin{displaymath}
 f_{AN}(net) = \frac{1}{1 + e^{-\lambda net}}
-\end{equation}
-
+\end{displaymath}
 where the parameter $\lambda$ influences the steepness of the function, but usually $\lambda = 1$.
 
 Artificial neurons can be used to compute linearly separable functions without error. This means that, for such a function, there exists at least one threshold value such that the neuron can separate the space of $I$-dimensional input vectors which produce an above-threshold output from those which produce a below-threshold output by an $I$-dimensional hyperplane. This threshold is determined by the bias weight $w_{I+1}$, meaning that the neuron can be used to separate the input vectors for which $net > 0$ from the input vectors for which $net \le 0$.
 
-Learning is a technique where the weights of an artificial neuron are updated to realize functions given by data.
-One type of learning is known as \emph{supervised learning}, where the neuron is provided with a data set (known as the \emph{training set}) consisting of training patterns of input vectors with associated target outputs.
+Learning is a technique by which the weights of an artificial neuron are updated to realize functions given by data.
+One type of learning is known as \emph{supervised learning}, where the neuron is provided with a data set, known as the \emph{training set}, consisting of training patterns of input vectors with associated target outputs.
 The weights of the neuron are then adjusted until the error between the actual outputs of the neuron and the target outputs in the patterns is minimized.
 
 An example of a supervised learning rule is the so-called \emph{delta rule}.
 The delta rule requires the definition of an error function, $\mathcal{E}$, to measure the neuron's error in approximating training targets.
 The sum of squared errors is usually used, given by
 
-\begin{equation}
+\begin{displaymath}
 \mathcal{E} = \sum_{p=1}^{P_T}(t_p-o_p)^2
-\end{equation}
+\end{displaymath}
 
 where $t_p$ and $o_p$ are the target and actual output for the $p$th pattern, and $P_T$ is the total number of patterns in the training set.
 
 Given a single training pattern, weights are updated using
 
-\begin{equation}
+\begin{displaymath}
 w_i(t) = w_i(t - 1) + \Delta w_i(t)
-\end{equation}
-
+\end{displaymath}
 with
-
-\begin{equation}
+\begin{displaymath}
 \Delta w_i(t) = \eta(- \frac{\partial \mathcal{E}}{\partial w_i})
-\end{equation}
-
+\end{displaymath}
 where
-
-\begin{equation}
+\begin{displaymath}
 \frac{\partial \mathcal{E}}{\partial w_i} = -2(t_p - o_p)\frac{\partial f_{AN}}{\partial net_p}a_{i,p}
-\end{equation}
-
+\end{displaymath}
 and $\eta$ is a constant known as the learning rate, $net_p$ is the net input for pattern $p$, and $a_{i,p}$ is the $i$th input signal in pattern $p$.
 
 The delta rule requires that its activation function $f_{AN}$ is continuous and differentiable;
 this is so the gradient of the error can be followed toward lower values, giving the direction in which the weights should be updated.
 If we use the sigmoid function for $f_{AN}$ then
-
-\begin{equation}
+\begin{displaymath}
 \frac{\partial f_{AN}}{\partial net_p} = o_p(1 - o_p)
-\end{equation}
-
+\end{displaymath}
 giving
-
-\begin{equation}
+\begin{displaymath}
 \frac{\partial \mathcal{E}}{\partial w_i} = -2(t_p - o_p)o_p(1 - o_p)a_{i,p}
-\end{equation}
+\end{displaymath}
 
 Artificial neurons are generally connected together into artificial neural networks to perform more sophisticated computation;
 however, this work is based closely on the work of Chalmers which considered single neurons in isolation \cite{chalmers-evolution-learning}.
