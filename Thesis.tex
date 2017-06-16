@@ -258,15 +258,32 @@ $\mathbf{H_6}$: When both initial weights and learning rules are evolved, higher
 % Operational Definitions
 \chapter{Operational Definitions}
 
-Instincts are to be represented by the genetically encoded initial weights of a network.
+An individual is a candidate solution to the genetic algorithm's fitness function whose characteristics are represented by a chromosome ("Computational Intelligence", pg. 129). In this work, individuals are manifest as artificial neurons. 
 
-Learning is to be represented by the genetically encoded learning rule that is applied to a network throughout its lifetime.
+A task is a set of input-output patterns, 
+[A] where individuals are evaluated by their ability to produce the pattern outputs when activated with the corresponding pattern inputs.
+[B] where for each pattern in the task an individual is evaluated on its ability to produce the pattern output when activated with the corresponding pattern inputs.
 
-For evolved networks where both initial weights and learning rules are genetically encoded, instincts are measured by removing the learning rule and evaluating the fitness of the network in the environment in which it was evolved.
-For the same networks, learning ability is measured by replacing the genetically encoded initial weights with random initial weights and evaluating the fitness of the network in the environment in which it was evolved; generalized learning ability is measured by evaluating the fitness of this instinct-removed network in an environment different from the one in which it was evolved.
+An environment is a set of tasks by which individuals are assessed.
 
-By default, mistakes made by a network during learning will count against its lifetime fitness; this is the ``non-nurturing" condition.
-In the ``nurturing" condition, then, mistakes made by a network during learning will not count against its lifetime fitness.
+An individual's lifetime is the period during which it is manifest as an artificial neuron and assessed by the fitness function. Specifically, an individual's lifetime consists of a supervised learning period followed by a final evaluation.
+
+Instincts are to be represented by the genetically encoded initial weights of a neuron. The tasks are independent, so there will need to be a separate set of instinct weights for each task.
+
+Learning is to be represented by the genetically encoded learning rule that is applied to a neuron throughout its lifetime.
+
+For evolved neurons where both initial weights and learning rules are genetically encoded, instincts are measured by removing the learning rule and evaluating the fitness of the neuron in the environment in which it was evolved.
+For the same neurons, learning ability is measured by replacing the genetically encoded initial weights with random initial weights and evaluating the fitness of the neuron in the environment in which it was evolved; generalized learning ability is measured by evaluating the fitness of this instinct-removed neuron in an environment different from the one in which it was evolved.
+
+% Don't speak in terms of "mistakes made during learning" because this doesn't make clear that learning fitness is omitted entirely in the nurturing condition
+% Instead, note that individuals are more prone to make errors during the training period
+
+[A] By default, mistakes made by a neuron during learning will count against its lifetime fitness; this is the ``non-nurturing" condition.
+In the ``nurturing" condition, then, mistakes made by a neuron during learning will not count against its lifetime fitness.
+
+% Is it clear enough that the supervised learning used involves fitness evaluations? 
+[B] By default, an individual's lifetime fitness is the average of all fitness evaluations made during learning---when the individual is prone to making mistakes---and the final fitness evaluation that follows learning; this is the ``non-nurturing" condition.
+In the ``nurturing" condition, then, an individual's lifetime fitness is simply the result of the final fitness evaluation taken after the individual has had an opportunity to learn correct behavior.
 
 % Procedure
 \chapter{Procedure}
