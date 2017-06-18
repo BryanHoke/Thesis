@@ -291,35 +291,15 @@ In the ``nurturing" condition, then, an individual's lifetime fitness is simply 
 %% Genetic Coding of Learning Mechanisms
 \section{Genetic Coding of Learning Mechanisms}
 
-\begin{center}
-	$a_j$ the activation of the input unit $j$
-\end{center}
+The weight update rule for an artificial neuron needs to be based on the components of that neuron which are, as covered in Section 1.2, $a_j$ the activation of the input unit $j$, $o_i$ the activation of the output unit $i$, $t_i$ the training signal on output unit $i$, and $w_{ij}$ the current value of the connection strength from input $j$ to output $i$.
 
-\begin{center}
-	$o_i$ the activation of the output unit $i$
-\end{center}
+Following Chalmers (1990), the genome encodes a function $F$ such that $\Delta w_{ij} = F(a_j, o_i, t_i, w_{ij})$, where $F$ is a linear function of its four parameters and their six pairwise products. Thus $F$ is determined by specifying ten coefficients.
 
-\begin{center}
-	$t_i$ the training signal on output unit $i$
-\end{center}
-
-\begin{center}
-	$w_{ij}$ the current value of the connection strength from input $j$ to output $i$
-\end{center}
-
-The genome encodes a function $F$ such that
-
+The genome encodes these ten coefficients, as well as an eleventh ``scale" parameter. That is,
 \[
-	\Delta w_{ij} = F(a_j, o_i, t_i, w_{ij})
+	\Delta w_{ij} = k_0(k_1w_{ij}+k_2a_j+k_3o_i+k_4t_i+k_5w_{ij}a_j+k_6w_{ij}o_i+k_7w_{ij}t_{i}+k_8a_jo_i+k_9a_jt_i+k_{10}o_it_i),
 \]
-
-$F$ is a linear function of its four parameters and their six pairwise products. Thus $F$ is determined by specifying ten coefficients.
-
-The genome encodes these ten coefficients, as well as an eleventh "scale" parameter.
-
-\[
-	\Delta w_{ij} = k_0(k_1w_{ij}+k_2a_j+k_3o_i+k_4t_i+k_5w_{ij}a_j+k_6w_{ij}o_i+k_7w_{ij}t_{i}+k_8a_jo_i+k_9a_jt_i+k_{10}o_it_i)
-\]
+where $k_0$ to $k_10$ are the encoded coefficients.
 
 The portion of the genome which encodes $\Delta w_{ij}$ consists of 35 bits. The first five bits encode the scale parameter $k_0$ such that it can represent the values $0$, $\pm 1/256$, $\pm 1/128$, ..., $\pm 32$, $\pm 64$, via exponential encoding. The first bit encodes the sign of $k_0$ (0: negative, 1: positive), and the next four bits encode the magnitude. If these four bits are interpreted as an integer $j$ between 0 and 15, we have
 
@@ -327,7 +307,7 @@ The portion of the genome which encodes $\Delta w_{ij}$ consists of 35 bits. The
 	|k_0|=
 	\begin{cases}
 		0 & \text{if $j = 0$}\\
-		2^{j-9} & \text{if $j = 1, ..., 15$}
+		2^{j-9} & \text{if $j = 1, ..., 15$.}
 	\end{cases}
 \]
 
@@ -337,7 +317,7 @@ The other 30 bits encode the other ten coefficients in groups of three. The firs
 	|k_i|=
 	\begin{cases}
 		0 & \text{if $j = 0$}\\
-		2^{j-1} & \text{if $j = 1, 2, 3$}
+		2^{j-1} & \text{if $j = 1, 2, 3$.}
 	\end{cases}
 \]
 
