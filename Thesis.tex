@@ -324,7 +324,7 @@ The other 30 bits encode the other ten coefficients in groups of three. The firs
 %% Genetic Coding of Initial Weights
 \section{Genetic Coding of Initial Weights}
 
-Network weights are evolved alongside learning rules. It would not be meaningful for each chromosome to represent a single set of weights to be used on all tasks, so instead each chromosome simultaneously represents a distinct set of weights for every task in the evolutionary run. The weights to be applied to each evolutionary task are encoded in distinct, consistent regions of each chromosome. 
+Initial weights may be evolved alongside learning rules. It would not be meaningful for each chromosome to encode a single set of weights to be used on all tasks, so instead each chromosome simultaneously encodes a distinct set of weights for each task in the evolutionary environment. The weights to be applied to each evolutionary task are encoded in distinct, consistent regions of each chromosome. 
 
 \newcommand{\bitsperweight}{3}
 \newcommand{\jlen}{2}
@@ -332,13 +332,13 @@ Network weights are evolved alongside learning rules. It would not be meaningful
 \newcommand{\jmax}{3}
 \newcommand{\exponentshift}{4}
 
-Weights are encoded using 3 bits each. The first bit is the sign of the weight. If we interpret these two bits as an integer $j$ between 0 and 3, then
+Initial weights are encoded using 3 bits each. The first bit is the sign of the weight, and the other two bits express a magnitude of 0, $\frac{1}{8}$, $\frac{1}{4}$, or $\frac{1}{2}$ via an exponential encoding. If we interpret the remaining two bits as an integer $j$ between 0 and 3, then
 
 \[
 	|k_i|=
 	\begin{cases}
 		0 & \text{if $j = 0$}\\
-		2^{j-4} & \text{if $j = 1, 2, 3$}
+		2^{j-4} & \text{if $j = 1, 2, 3$.}
 	\end{cases}
 \]
 
