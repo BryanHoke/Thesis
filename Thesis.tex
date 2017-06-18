@@ -344,40 +344,40 @@ Initial weights are encoded using 3 bits each. The first bit is the sign of the 
 
 For each task the number of weights encoded is equal to the number of inputs in that task plus one bias weight.
 
-There are two conditions of evaluation: the "nurturing" case and the "non-nurturing" case. During evaluation, each network is first trained for 10 epochs using its learning rule. Following this, the network is evaluated on the same tasks. In the "nurturing" case the individual's fitness is simply the result of the evaluation, whereas in the "non-nurturing" case the individual's fitness is the average of evaluation during all training epochs and the final evaluation.
-
 %% Evaluation of Fitness
 \section{Evaluation of Fitness}
+
+There are two conditions of evaluation: the ``nurturing" case and the ``non-nurturing" case. During evaluation, each network is first trained for 10 epochs using its learning rule. Following this, the network is evaluated on the same tasks. In the ``nurturing" case the individual's fitness is simply the result of the evaluation, whereas in the ``non-nurturing" case the individual's fitness is the average of evaluation during all training epochs and the final evaluation.
 
 Fitness evaluation for the nurturing case:
 
 (1) Create a network with the appropriate number of input units for the task and a single output unit.
 
-(2) Initialize the connection strengths of the network using the values encoded in the chromosome
+(2) Initialize the connection strengths of the network using the values encoded in the chromosome.
 
-(3) For 10 epochs, cycle through the training exemplars for the task, where for each exemplar we:
+(3) For 10 epochs, cycle through the training exemplars for the task, where for each exemplar:
 
-(3a) Propagate input values through the system, yielding output values; then
+(3a) propagate input values through the system, yielding output values; then
 
-(3b) Adjust the weights of the system according to the formula specified by the learning procedure, on the basis of inputs, output, training signal, and current weights.
+(3b) adjust the weights of the system according to the formula specified by the weight update rule, on the basis of inputs, output, training signal, and current weights.
 
-(4) At the end of this process, fitness on the task is measured by testing the network on all training exemplars, and dividing the total error by the number of exemplars, subtracting from 1, and multiplying by 100. This yields a fitness "percentage" between 0 and 100.
+(4) At the end of this process, fitness on the task is measured by testing the network on all training exemplars, and dividing the total error by the number of exemplars, and subtracting from 1. This yields a fitness value between 0 and 1.
 
 Fitness evaluation for the non-nurturing case:
 
 (1) Create a network with the appropriate number of input units for the task and a single output unit.
 
-(2) Initialize the connection strengths of the network using the values encoded in the chromosome
+(2) Initialize the connection strengths of the network using the values encoded in the chromosome.
 
-(3) For 10 epochs, cycle through the training exemplars for the task, where for each exemplar we:
+(3) For 10 epochs, cycle through the training exemplars for the task, where for each exemplar:
 
-(3a) Test the network on the exemplar and measure the error in the network output; then
+(3a) test the network on the exemplar and measure the error in the network output; then
 
-(3b) Propagate input values through the system, yielding output values, then adjust the weights of the system according to the formula specified by the learning procedure, on the basis of inputs, output, training signal, and current weights.
+(3b) propagate input values through the system, yielding output values, then adjust the weights of the system according to the formula specified by the weight update rule, on the basis of inputs, output, training signal, and current weights.
 
-(4) At the end of this process, test the network on all training exemplars and divide the total error of this test and all tests from step 3a by the total number of tests that occurred, subtracting from 1, and multiplying by 100. This yields a fitness "percentage" between 0 and 100.
+(4) At the end of this process, test the network on all training exemplars and divide the total error of this test and all tests from step 3a by the total number of tests that occurred, and subtracting from 1. This yields a fitness value between 0 and 1.
 
-Fitness of the chromosome is obtained by evaluating its performance on each of the (typically 20) tasks, and taking the mean fitness over all tasks. In this way every chromosome is assigned a fitness between 0 and 100\%.
+Fitness of the chromosome is obtained by evaluating its performance on each of the (typically 20) tasks, and taking the mean fitness over all tasks. In this way every chromosome is assigned a fitness between 0 and 1.
 
 %% Parameters of the Genetic Algorithm
 \section{Parameters of the Genetic Algorithm}
