@@ -382,8 +382,21 @@ Fitness of the chromosome is obtained by evaluating its performance on each of t
 %% Parameters of the Genetic Algorithm
 \section{Parameters of the Genetic Algorithm}
 
-% TODO: Describe GA used
 % TODO: Describe "segment-wise" crossover used
+
+A fixed population size of 40 is used in all experiments. Following the fitness evaluation process described in Section 4.3, a new population of 40 individuals is created as follows:
+
+(1) Elitist selection is applied, meaning that an exact copy of the individual with the highest fitness in the previous population is inserted into the new population.
+
+(2) Roulette-wheel selection (where an individual's probability of being selected is linearly proportional to its fitness) is used to select 39 individuals from the previous population with replacement (so an individual can be selected more than once), then:
+
+(2a) the first 32 selected individuals are reproduced by gene-wise two-point crossover in pairs to create 32 new individuals;
+
+(2b) the remaining 7 selected individuals are reproduced by cloning to create 7 new individuals;
+
+(2c) the 39 new individuals from steps 2a and 2b are mutated such that each bit in each chromosome has a 1\% chance of changing and then inserted into the new population.
+
+This cycle of fitness-evaluation and reproduction is repeated for 4000 generations.
 
 Population size: 40
 Crossover rate: 0.8
