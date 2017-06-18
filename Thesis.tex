@@ -407,7 +407,9 @@ Number of generations: 4000
 %% Post-Evolutionary Evaluation
 \section{Post-Evolutionary Evaluation}
 
-Before each evolutionary run, 10 tasks are selected from the task pool and designated as "test tasks". After each evolutionary run, the chromosome with the highest fitness score in the history of the populations in that run is identified. From this chromosome, the learning rule bits are isolated and evaluated on the test tasks (using both the nurturing and non-nurturing conditions) and the weight-encoding bits are isolated and evaluated on the evolutionary tasks.
+Before each evolutionary run, 10 tasks are selected from the task pool and designated as ``test tasks."
+After each evolutionary run, the chromosome with the highest fitness score in the history of the populations in that run is identified.
+From this chromosome, the learning rule bits are isolated and evaluated on the test tasks (using both the nurturing and non-nurturing conditions) and the bits encoding the initial weights are isolated and evaluated on the evolutionary tasks.
 
 % Results
 \chapter{Results}
