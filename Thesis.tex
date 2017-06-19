@@ -409,8 +409,10 @@ Number of generations: 4000
 
 Before each evolutionary run, 10 tasks are selected at random from the task pool and designated as ``test tasks,"
 and up to 20 tasks are selected at random from the remaining 20 tasks and designated as ``evolutionary tasks."
+New evolutionary tasks and test tasks are selected for each repetition of an evolutionary run and between evolutionary runs  nurturing condition and non-nurturing condition .
 After each evolutionary run, the chromosome with the highest fitness score in the history of the populations in that run is identified.
 From this chromosome, the learning rule bits are isolated and evaluated on the test tasks (using both the nurturing and non-nurturing conditions) and the bits encoding the initial weights are isolated and evaluated on the evolutionary tasks.
+Each evolutionary run is repeated 30 times.
 
 % Results
 \chapter{Results}
