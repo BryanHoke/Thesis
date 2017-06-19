@@ -390,11 +390,11 @@ A fixed population size of 40 is used in all experiments. Following the fitness 
 
 (2) Roulette-wheel selection (where an individual's probability of being selected is linearly proportional to its fitness) is used to select 39 individuals from the previous population with replacement (so an individual can be selected more than once), then:
 
-(2a) the first 32 selected individuals are reproduced by gene-wise two-point crossover in pairs to create 32 new individuals;
+(2a) the first 32 selected individuals are reproduced by gene-wise two-point crossover in pairs to create 32 new individuals which are inserted into the new population;
 
-(2b) the remaining 7 selected individuals are reproduced by cloning to create 7 new individuals;
+(2b) the remaining 7 selected individuals are reproduced by cloning to create 7 new individuals which are inserted into the new population.
 
-(2c) the 39 new individuals from steps 2a and 2b are mutated such that each bit in each chromosome has a 1\% chance of changing and then inserted into the new population.
+(3) Each individual in the new population is mutated such that each bit in each chromosome has a 1\% chance of changing.
 
 This cycle of fitness-evaluation and reproduction is repeated for 4000 generations.
 
