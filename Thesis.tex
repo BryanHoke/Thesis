@@ -423,7 +423,7 @@ Each evolutionary run is repeated 30 times.
 \begin{figure}[H]
 	\centering
 	\includegraphics{ChalmersEvolution.pdf}
-	\caption{The evolution of maximum fitness for populations evaluated using 20 tasks under the nurturing and non-nurturing conditions.}
+	\caption{The maximum fitness for populations evolved using 20 tasks under the nurturing and non-nurturing conditions.}
 \end{figure}
 
 % TODO: Add plot of best individuals to serve as learning test plot
@@ -436,45 +436,45 @@ Each evolutionary run is repeated 30 times.
 \end{figure}
 
 %% Fitness Test
-\section{Fitness Test}
+\section{Intra-Learning and Post-Learning Fitness Test}
 
 The best individual is re-evaluated on the evolutionary tasks using both the nurturing and non-nurturing conditions (recall that it is evaluated using only one of these conditions during evolution).
 
-In both cases it is clear that the objective function becomes more difficult to satisfy as the number of evolutionary tasks increases. 
+Under both conditions it is clear that the objective function becomes more difficult to satisfy as the number of evolutionary tasks increases. 
 
-Individuals evolved using the non-nurturing case perform better when re-evaluated using the non-nurturing case than when using the nurturing case, and individuals evolved using the nurturing case perform better when re-evaluated using the nurturing case than when using the non-nurturing case.
+Individuals evolved using the non-nurturing condition perform better when re-evaluated using the intra-learning fitness test/non-nurturing condition than when using the post-learning test/nurturing condition, and individuals evolved using the nurturing condition perform better when re-evaluated using the post-learning test/nurturing condition than when using the intra-learning test/non-nurturing condition.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NonNurturingFitnessTestPlot.pdf}
-	\caption{Non-nurturing fitness test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\caption{Intra-learning/non-nurturing fitness test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NurturingFitnessTestPlot.pdf}
-	\caption{Nurturing fitness test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\caption{Post-learning/nurturing fitness test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
 
 %% Network Test
-\section{Network Test}
+\section{Pre-Learning Test}
 
-The portion of the chromosome which encodes the network weights is isolated and evaluated on the evolutionary tasks by initializing a network with the encoded weights, with the intention of determining the contribution of the portion of the chromosome which encodes the initial weights to the fitness of the whole chromosome.
+The portion of the chromosome that encodes the initial weights is isolated and evaluated on the evolutionary tasks by initializing a network with the encoded weights, with the intention of determining the contribution to the fitness of the whole chromosome of just the portion of the chromosome that encodes the initial weights.
 
-Networks evolved using the non-nurturing condition performed better on this evaluation than networks evolved using the nurturing condition, suggesting that the initial weights make a larger contribution to fitness in the non-nurturing case than in the nurturing case.
+Networks evolved using the non-nurturing condition performed better on this evaluation than networks evolved using the nurturing condition, suggesting that instincts (initial weights) make a larger contribution to fitness in the non-nurturing case than in the nurturing case.
 % TODO: Suggest that learning plays a somewhat less important role in the non-nurturing case?
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NetworkTestPlot.pdf}
-	\caption{Network test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\caption{Instinct test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
 
 %% Learning Improvement
 \section{Learning Improvement}
 
-To determine the average amount of useful learning that evolves for a given number of tasks we can examine the difference between the evolutionary fitness and the network fitness.
-This is because the network fitness is essentially the same as an individual's fitness before it undergoes learning processes, whereas the evolutionary fitness is an individual's fitness after it undergoes learning processes.
+To determine the average amount of useful learning that evolves for a given number of tasks we can examine the difference between the post-learning fitness and the pre-learning (instinctive) fitness.
+This is because the pre-learning fitness is the individual's fitness before it learns, whereas the post-learning fitness is an individual's fitness after it learns.
 
 As shown in Figure 4.4, the improvement in fitness due to learning increases as the number of evolutionary tasks increases. This suggests that learning becomes an increasingly important evolutionary strategy as the environment becomes more varied.
 
@@ -485,27 +485,27 @@ As shown in Figure 4.4, the improvement in fitness due to learning increases as 
 \end{figure}
 
 %% Learning Test
-\section{Learning Test}
+\section{Weight-Generalization Learning Test}
 
-The portion of the chromosome which encodes the learning rule is isolated and evaluated on the evolutionary tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the contribution of the portion of the chromosome which encodes the learning rule to the fitness of the whole chromosome.
+The portion of the chromosome that encodes the learning rule is isolated and evaluated on the evolutionary tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the contribution of the portion of the chromosome that encodes the learning rule to the fitness of the whole chromosome.
 
-In both cases of evaluation the learning rule evolved using the nurturing condition performed better than the learning rule evolved using the non-nurturing condition, suggesting that the learning rule makes a larger contribution to fitness in the nurturing case than in the non-nurturing case.
+In both evaluation conditions, the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition, suggesting that the learning rule makes a larger contribution to fitness under the nurturing condition than it does under the non-nurturing condition.
 % TODO: Suggest that learning plays a somewhat more important role in the nurturing case?
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NonNurturingLearningTestPlot.pdf}
-	\caption{Non-nurturing learning test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\caption{Random-start, intra-learning/non-nurturing learning test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NurturingLearningTestPlot.pdf}
-	\caption{Nurturing learning test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\caption{Random-start, post-learning/nurturing learning test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
 
 %% Generalization Test
-\section{Generalization Test}
+\section{Task Generalization Learning Test}
 
 The portion of the chromosome which encodes the learning rule is isolated and evaluated on the test tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the capacity for generalized learning that was evolved.
 
