@@ -435,14 +435,10 @@ Each evolutionary run is repeated 30 times.
 	\caption{The average generalized learning capabilities for the best individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
 
-%% Fitness Test
+%% Intra-Learning and Post-Learning Fitness Test
 \section{Intra-Learning and Post-Learning Fitness Test}
 
 The best individual is re-evaluated on the evolutionary tasks using both the nurturing and non-nurturing conditions (recall that it is evaluated using only one of these conditions during evolution).
-
-Under both conditions it is clear that the objective function becomes more difficult to satisfy as the number of evolutionary tasks increases. 
-
-Individuals evolved using the non-nurturing condition perform better when re-evaluated using the intra-learning fitness test/non-nurturing condition than when using the post-learning test/nurturing condition, and individuals evolved using the nurturing condition perform better when re-evaluated using the post-learning test/nurturing condition than when using the intra-learning test/non-nurturing condition.
 
 \begin{figure}[H]
 	\centering
@@ -456,13 +452,10 @@ Individuals evolved using the non-nurturing condition perform better when re-eva
 	\caption{Post-learning/nurturing fitness test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
 
-%% Network Test
+%% Pre-Learning Test
 \section{Pre-Learning Test}
 
 The portion of the chromosome that encodes the initial weights is isolated and evaluated on the evolutionary tasks by initializing a network with the encoded weights, with the intention of determining the contribution to the fitness of the whole chromosome of just the portion of the chromosome that encodes the initial weights.
-
-Networks evolved using the non-nurturing condition performed better on this evaluation than networks evolved using the nurturing condition, suggesting that instincts (initial weights) make a larger contribution to fitness in the non-nurturing case than in the nurturing case.
-% TODO: Suggest that learning plays a somewhat less important role in the non-nurturing case?
 
 \begin{figure}[H]
 	\centering
@@ -484,13 +477,10 @@ As shown in Figure 4.4, the improvement in fitness due to learning increases as 
 	\caption{The difference between evolutionary fitness and network fitness for individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
 
-%% Learning Test
+%% Weight-Generalization Learning Test
 \section{Weight-Generalization Learning Test}
 
 The portion of the chromosome that encodes the learning rule is isolated and evaluated on the evolutionary tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the contribution of the portion of the chromosome that encodes the learning rule to the fitness of the whole chromosome.
-
-In both evaluation conditions, the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition, suggesting that the learning rule makes a larger contribution to fitness under the nurturing condition than it does under the non-nurturing condition.
-% TODO: Suggest that learning plays a somewhat more important role in the nurturing case?
 
 \begin{figure}[H]
 	\centering
@@ -509,8 +499,6 @@ In both evaluation conditions, the learning rule evolved under the nurturing con
 
 The portion of the chromosome which encodes the learning rule is isolated and evaluated on the test tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the capacity for generalized learning that was evolved.
 
-In both evaluation conditions, the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition, suggesting that better generalized learning is more likely to evolve under the nurturing condition.
-
 \begin{figure}[H]
 	\centering
 	\includegraphics{NonNurturingGeneralizationTestPlot.pdf}
@@ -522,6 +510,31 @@ In both evaluation conditions, the learning rule evolved under the nurturing con
 	\includegraphics{NurturingGeneralizationTestPlot.pdf}
 	\caption{Nurturing generalization test on test tasks for individuals evolved under the nurturing and non-nurturing conditions.}
 \end{figure}
+
+% Discussion
+\chapter{Discussion}
+
+%% Intra-Learning and Post-Learning Fitness Test
+\section{Intra-Learning and Post-Learning Fitness Test}
+
+Under both conditions it is clear that the objective function becomes more difficult to satisfy as the number of evolutionary tasks increases. 
+
+Individuals evolved using the non-nurturing condition perform better when re-evaluated using the intra-learning fitness test/non-nurturing condition than when using the post-learning test/nurturing condition, and individuals evolved using the nurturing condition perform better when re-evaluated using the post-learning test/nurturing condition than when using the intra-learning test/non-nurturing condition.
+
+%% Pre-Learning Test
+\section{Pre-Learning Test}
+
+Networks evolved using the non-nurturing condition performed better on this evaluation than networks evolved using the nurturing condition, suggesting that instincts (initial weights) make a larger contribution to fitness in the non-nurturing case than in the nurturing case.
+
+%% Weight-Generalization Learning Test
+\section{Weight-Generalization Learning Test}
+
+In both evaluation conditions, the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition, suggesting that the learning rule makes a larger contribution to fitness under the nurturing condition than it does under the non-nurturing condition.
+
+%% Task Generalization Learning Test
+\section{Task Generalization Learning Test}
+
+In both evaluation conditions, the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition, suggesting that better generalized learning is more likely to evolve under the nurturing condition.
 
 % Conclusions
 \chapter{Conclusions}
