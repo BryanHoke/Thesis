@@ -475,8 +475,6 @@ The portion of the chromosome that encodes the initial weights is isolated and e
 To determine the average amount of useful learning that evolves for a given number of tasks we can examine the difference between the post-learning fitness and the pre-learning (instinctive) fitness.
 This is because the pre-learning fitness is the individual's fitness before it learns, whereas the post-learning fitness is an individual's fitness after it learns.
 
-As shown in Figure \ref{fig:LearningImprovement}, the improvement in fitness due to learning increases as the number of evolutionary tasks increases. This suggests that learning becomes an increasingly important evolutionary strategy as the environment becomes more varied.
-
 \begin{figure}[H]
 	\centering
 	\includegraphics{LearningImprovementPlot.pdf}
@@ -539,6 +537,11 @@ Individuals evolved using the non-nurturing condition perform better when re-eva
 \section{Pre-Learning Test}
 
 Networks evolved using the non-nurturing condition performed better on this evaluation than networks evolved using the nurturing condition, suggesting that instincts (initial weights) make a larger contribution to fitness in the non-nurturing case than in the nurturing case.
+
+%% Learning Improvement
+\section{Learning Improvement}
+
+As shown in Figure \ref{fig:LearningImprovement}, the improvement in fitness due to learning increases as the number of evolutionary tasks increases. This suggests that learning becomes an increasingly important evolutionary strategy as the environment becomes more varied.
 
 %% Weight-Generalization Learning Test
 \section{Weight-Generalization Learning Test}
