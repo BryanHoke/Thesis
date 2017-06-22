@@ -64,10 +64,12 @@ in this sense, a genetic algorithm can be used as a search algorithm that looks 
 
 A process of selection is used to determine the chromosomes which will reproduce into the next generation based on their fitness values,
  where individuals with higher fitness are more likely to be selected.
+ In \emph{roulette-wheel selection}, individuals are selected with a probability that is linearly proportional to their fitness.
+ In \emph{elitist selection}, the individual with the highest fitness is automatically selected.
 
 The selection chromosomes then reproduce to create the next-generation population.
 One operation used in reproduction is \emph{crossover}, where segments of two chromosomes are combined to create a new chromosome.
-The offspring chromosomes may also undergo a process of \emph{mutation}, where each gene has its value changed with some probability, in order to explore the problem space.
+The offspring chromosomes may also undergo a process of \emph{mutation}, where each gene has its value changed with some probability, in order to explore the problem space. 
 
 This process is repeated until some stopping condition is met, typically after a certain number of generations.
 
