@@ -274,14 +274,8 @@ An individual's \emph{lifetime} is the period during which it is manifest as an 
 For evolved neurons where both initial weights and learning rules are genetically encoded, instinct quality is measured by removing the learning rule and evaluating the fitness of the neuron in the environment in which it was evolved.
 For the same neurons, \emph{learning ability} is measured by replacing the genetically encoded initial weights with random initial weights and evaluating the fitness of the neuron in the environment in which it was evolved; \emph{generalized learning ability} is measured by evaluating the fitness of this instinct-removed neuron in an environment different from the one in which it was evolved.
 
-% Don't speak in terms of "mistakes made during learning" because this doesn't make clear that learning fitness is omitted entirely in the nurturing condition
-% Instead, note that individuals are more prone to make errors during the training period
-
-[A] By default, mistakes made by a neuron during learning will count against its lifetime fitness; this is the ``non-nurturing" condition.
-In the ``nurturing" condition, then, mistakes made by a neuron during learning will not count against its lifetime fitness.
-
 % Is it clear enough that the supervised learning used involves fitness evaluations? 
-[B] By default, an individual's lifetime fitness is the average of all fitness evaluations made during learning---when the individual is prone to making mistakes---and the final fitness evaluation that follows learning; this is the ``non-nurturing" condition.
+By default, an individual's lifetime fitness is the average of all fitness evaluations made during learning---when the individual is prone to making mistakes---and the final fitness evaluation that follows learning; this is the ``non-nurturing" condition.
 In the ``nurturing" condition, then, an individual's lifetime fitness is simply the result of the final fitness evaluation taken after the individual has had an opportunity to learn correct behavior.
 
 % Procedure
