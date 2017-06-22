@@ -258,22 +258,22 @@ $\mathbf{H_6}$: When both initial weights and learning rules are evolved, higher
 % Operational Definitions
 \chapter{Operational Definitions}
 
-An individual is a candidate solution to the genetic algorithm's fitness function whose characteristics are represented by a chromosome ("Computational Intelligence", pg. 129). In this work, individuals are manifest as artificial neurons. 
+An \emph{individual} is a candidate solution to the genetic algorithm's fitness function whose characteristics are represented by a chromosome ("Computational Intelligence", pg. 129). In this work, individuals are manifest as artificial neurons. 
 
-A task is a set of input-output patterns, 
+A \emph{task} is a set of input-output patterns, 
 [A] where individuals are evaluated by their ability to produce the pattern outputs when activated with the corresponding pattern inputs.
 [B] where for each pattern in the task an individual is evaluated on its ability to produce the pattern output when activated with the corresponding pattern inputs.
 
-An environment is a set of tasks by which individuals are assessed.
+An \emph{environment} is a set of tasks by which individuals are assessed.
 
-An individual's lifetime is the period during which it is manifest as an artificial neuron and assessed by the fitness function. Specifically, an individual's lifetime consists of a supervised learning period followed by a final evaluation.
+An individual's \emph{lifetime} is the period during which it is manifest as an artificial neuron and assessed by the fitness function. Specifically, an individual's lifetime consists of a supervised learning period followed by a final evaluation.
 
-Instincts are to be represented by the genetically encoded initial weights of a neuron. The tasks are independent, so there will need to be a separate set of instinct weights for each task.
+\emph{Instincts} are to be represented by the genetically encoded initial weights of a neuron. The tasks are independent, so there will need to be a separate set of instinct weights for each task.
 
-Learning is to be represented by the genetically encoded learning rule that is applied to a neuron throughout its lifetime.
+\emph{Learning} is to be represented by the genetically encoded learning rule that is applied to a neuron throughout its lifetime.
 
 For evolved neurons where both initial weights and learning rules are genetically encoded, instincts are measured by removing the learning rule and evaluating the fitness of the neuron in the environment in which it was evolved.
-For the same neurons, learning ability is measured by replacing the genetically encoded initial weights with random initial weights and evaluating the fitness of the neuron in the environment in which it was evolved; generalized learning ability is measured by evaluating the fitness of this instinct-removed neuron in an environment different from the one in which it was evolved.
+For the same neurons, \emph{learning ability} is measured by replacing the genetically encoded initial weights with random initial weights and evaluating the fitness of the neuron in the environment in which it was evolved; \emph{generalized learning ability} is measured by evaluating the fitness of this instinct-removed neuron in an environment different from the one in which it was evolved.
 
 % Don't speak in terms of "mistakes made during learning" because this doesn't make clear that learning fitness is omitted entirely in the nurturing condition
 % Instead, note that individuals are more prone to make errors during the training period
