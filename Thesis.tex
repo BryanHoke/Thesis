@@ -471,6 +471,10 @@ it will be referred to as the ``post-learning fitness test."
 The portion of the chromosome that encodes the initial weights is isolated and evaluated on the evolutionary tasks by initializing a network with the encoded weights, with the intention of determining the contribution to the fitness of the whole chromosome of just the portion of the chromosome that encodes the initial weights.
 In other words, this is intended to test the instincts of the individual in the absence of learning.
 
+The inverse-linear correlation between the pre-learning fitness and the number of evolutionary tasks is statistically significant for both 
+the nurturing condition (Pearson correlation, $r=-0.6324,$ $p=2.4733*10^{-68}$)
+and the non-nurturing condition (Pearson correlation, $r=-0.8331,$ $p=6.4082*10^{-156}$).
+
 \begin{figure}[H]
 	\centering
 	\includegraphics{NetworkTestPlot.pdf}
