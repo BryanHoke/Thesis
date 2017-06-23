@@ -557,6 +557,16 @@ Figure \ref{fig:ChalmersLearningTest} demonstrates that the generalized learning
 
 Under both evaluation conditions, the generalized learning fitness was statistically significantly proportional to the number of evolutionary tasks, suggesting that the quality of evolved generalized learning increases with the number of evolutionary tasks.
 
+However, in both evaluation conditions,
+the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition by a statistically significant margin,
+suggesting that better generalized learning is more likely to evolve under the nurturing condition.
+This is contrary to our hypothesis that the presence or absence of nurturing would not affect the quality of evolved generalized learning 
+when learning rules could be evolved by initial weights could not.
+A possible explanation for this unexpected result is that the individuals evolved nurturing condition were evaluated using only the post-learning fitness test,
+while the individuals evolved under the non-nurturing condition were evaluated only under the intra-learning test.
+The intra-learning test is expected to yield lower fitness scores than the post-learning test,
+and this difference may account for the result found.
+
 These results serve as a re-confirmation of Chalmers's original findings \cite{chalmers-evolution-learning}.
 
 %% Intra-Learning and Post-Learning Fitness Test
