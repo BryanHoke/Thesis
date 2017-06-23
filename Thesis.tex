@@ -519,6 +519,12 @@ The portion of the chromosome that encodes the learning rule is isolated and eva
 The portion of the chromosome which encodes the learning rule is isolated and evaluated on the test tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the capacity for generalized learning that was evolved.
 The differences between the results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p < 0.001$).
 
+The linear correlation between the generalized learning fitness and the number of evolutionary tasks is statistically significant for
+the intra-learning test under both the nurturing condition (Pearson correlation, $r=0.6187,$ $p=1.1287*10^{-64}$) 
+and the non-nurturing condition (Pearson correlation, $r=0.4253,$ $p=9.2470*10^{-28}$)
+and the post-learning test under both the nurturing condition (Pearson correlation, $r=0.6102,$ $p=1.7527*10^{-62}$)
+and the non-nurturing condition (Pearson correlation, $r=0.4197,$ $p=5.2515*10^{-27}$).
+
 \begin{figure}[H]
 	\centering
 	\includegraphics{NonNurturingGeneralizationTestPlot.pdf}
