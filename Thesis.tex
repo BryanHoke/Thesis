@@ -394,13 +394,13 @@ A fixed population size of 40 is used in all experiments. Following the fitness 
 
 (3) Each individual in the new population is mutated such that each bit in each chromosome has a 1\% chance of changing.
 
-This cycle of fitness-evaluation and reproduction is repeated for 4000 generations.
+This cycle of fitness-evaluation and reproduction is repeated for 1000 generations.
 
 %Population size: 40
 %Crossover rate: 0.8
 %Mutation rate: 0.01
 %Elitism factor: 1
-%Number of generations: 4000
+%Number of generations: 1000
 
 %% Post-Evolutionary Evaluation
 \section{Post-Evolutionary Evaluation}
@@ -421,7 +421,7 @@ This chapter presents the results of all experiments performed.
 \section{Results of Initial Evolutionary Runs}
 
 This section presents the results of experiments where learning rules can be evolved but initial weights cannot, performed under both the nurturing and non-nurturing conditions.
-In these experiments only 10 repetitions were performed under each condition.
+In these experiments, each evolutionary run lasted for 4000 generations and only 10 repetitions were performed under each condition.
 % TODO: Mention random weights
 
 The linear correlation between the generalized learning fitness and the number of evolutionary tasks is statistically significant for both
