@@ -333,13 +333,13 @@ Initial weights may be evolved alongside learning rules. It would not be meaning
 \newcommand{\jmax}{3}
 \newcommand{\exponentshift}{4}
 
-Initial weights are encoded using 3 bits each. The first bit is the sign of the weight, and the other two bits express a magnitude of 0, $\frac{1}{8}$, $\frac{1}{4}$, or $\frac{1}{2}$ via an exponential encoding. If we interpret the remaining two bits as an integer $j$ between 0 and 3, then
+Initial weights are encoded using 3 bits each. The first bit is the sign of the weight, and the other two bits express a magnitude of 0, $\frac{1}{2}$, $1$, or $2$ via an exponential encoding. If we interpret the remaining two bits as an integer $j$ between 0 and 3, then
 
 \[
 	|k_i|=
 	\begin{cases}
 		0 & \text{if $j = 0$}\\
-		2^{j-4} & \text{if $j = 1, 2, 3$.}
+		2^{j-2} & \text{if $j = 1, 2, 3$.}
 	\end{cases}
 \]
 
