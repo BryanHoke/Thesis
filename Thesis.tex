@@ -247,11 +247,21 @@ Given environments like those used by Chalmers, where instincts cannot be evolve
 
 $\mathbf{H_1}$: When only learning rules are evolved, the quality of generalized learning evolved will be proportional to the number of tasks in the evolutionary environment, both with and without nurturing.
 
-This will be verified using Pearson's correlation coefficient.
+In other words, we expect to be able both 
+to re-confirm Chalmers's conclusion about the evolution of generalized learning
+(since the condition under which Chalmers's experiments were performed is effectively the same as the nurturing condition here) 
+and to demonstrate that Chalmers's conclusion remains valid even when evaluated under the new non-nurturing condition.
+
+$\mathbf{H_1}$ will be verified using Pearson's correlation coefficient.
 
 $\mathbf{H_2}$: When only learning rules are evolved, the quality of generalized learning evolved will be equal with nurturing and without.
 
-This will be verified using randomized ANOVA.
+This is to say that we do not expect the non-nurturing condition to significantly influence the quality of evolved generalized learning
+with respect to the quality of generalized learning evolved under the nurturing condition (i.e., the conditions Chalmers used).
+We expect this to be the case because while the non-nurturing condition does make learning less competitive,
+there still are no viable alternative strategies to learning that can be evolved.
+
+$\mathbf{H_2}$ will be verified using randomized ANOVA.
 
 The introduction of the ability to evolve initial network weights alongside learning rules allows for the evolution of ``instincts" as an alternate strategy to learning.
 It is expected that higher-quality instincts will evolve for small numbers of evolutionary tasks, but higher-quality learning will evolve as the number of evolutionary tasks increases.
@@ -259,21 +269,36 @@ This will be because there will be a smaller number of instinct genes than learn
 
 $\mathbf{H_3}$: When both initial weights and learning rules are evolved, the quality of instincts evolved will be inversely proportional to the number of tasks in the evolutionary environment, both with and without nurturing.
 
-This will be verified using Pearson's correlation coefficient.
+$\mathbf{H_3}$ will be verified using Pearson's correlation coefficient.
 
 $\mathbf{H_4}$: When both initial weights and learning rules are evolved, the quality of generalized learning evolved will be proportional to the number of tasks in the evolutionary environment, both with and without nurturing.
 
-This will be verified using Pearson's correlation coefficient.
+In other words, higher-quality instincts will evolve with low numbers of evolutionary tasks in the environment,
+and lower-quality instincts will evolve with higher numbers of evolutionary tasks in the environment.
+We expect this to be the case because the number of genes required to represent instinctive responses to the environment will be proportional to the number of tasks in the environment,
+and while it is easy to find good solutions when only small numbers of genes are evolved,
+it becomes increasingly difficult to find good solutions as the number of genes involved increases.
+
+$\mathbf{H_4}$ will be verified using Pearson's correlation coefficient.
+
+$\mathbf{H_3}$ and $\mathbf{H_4}$ can be seen as sort of counterparts to each other 
+because they predict that the quality of evolved instincts and generalized learning rules will exhibit opposite trends with respect to the number of tasks in the evolutionary environment; 
+that instincts will be strong under the conditions where generalized learning is weak, and vice-versa.
+However, it is important to remain clear about the fact that the outcomes of $\mathbf{H_3}$ and $\mathbf{H_4}$ have no dependencies on each other because they make predictions about instincts and generalized learning with respect to the number of tasks in the evolutionary environment, not each other;
+it just so happens that we expect instincts and generalized learning to exhibit opposite trends
+but we do not necessarily expect a zero-sum relationship between the two.
+For example, it could be the case that the quality of both evolved instincts and generalized learning are proportional to the number of tasks in the evolutionary environment,
+in which case $\mathbf{H_4}$ would be supported but $\mathbf{H_3}$ would not.
 
 It is expected that higher-quality generalized learning will evolve in the nurturing condition than in the non-nurturing condition---and higher-quality instincts will evolve in the non-nurturing condition than in the nurturing condition---because of the costs associated with the learning process in the non-nurturing condition; individuals tend to have low fitness early in their life before they have had the opportunity to learn correct behavior, but in the nurturing condition individuals do not incur fitness penalties for mistakes made early in life.
 
 $\mathbf{H_5}$: When both initial weights and learning rules are evolved, higher-quality instincts will evolve without nurturing than with.
 
-This will be verified using randomized ANOVA.
+$\mathbf{H_5}$ will be verified using randomized ANOVA.
 
 $\mathbf{H_6}$: When both initial weights and learning rules are evolved, higher-quality generalized learning will evolve with nurturing than without.
 
-This will be verified using randomized ANOVA.
+$\mathbf{H_6}$ will be verified using randomized ANOVA.
 
 % Operational Definitions
 \chapter{Operational Definitions}
