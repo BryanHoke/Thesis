@@ -240,9 +240,14 @@ Three factors are considered with respect to their effects on the evolution of l
 (1) the number of tasks,
 (2) the presence or absence of nurturing, and
 (3) the possibility of evolving instincts.
-Six hypotheses are formulated to explore these factors.
+Six hypotheses are formulated to explore these factors,
+and we consider them in related pairs.
+The first pair, which makes predictions about the addition of a non-nurturing condition to Chalmers's experimental setup, is discussed in Section 2.1.
+The second pair, which makes predictions about the addition of instincts to the experimental setup used by the first pair, is discussed in Section 2.2.
+The third pair, which makes predictions about the effects of the nurturing and non-nurturing conditions on the evolution of instincts and generalized learning, is discussed in Section 2.3.
+Finally, appropriate hypothesis tests for these hypotheses are discussed in Section 2.4.
 
-\section{H1 and H2}
+\section{Hypotheses $H_1$ and $H_2$}
 
 The first two hypotheses consider the effects of adding a non-nurturing condition to Chalmers's original model.
 
@@ -262,8 +267,6 @@ to re-confirm Chalmers's conclusion about the evolution of generalized learning
 (since the condition under which Chalmers's experiments were performed is effectively the same as the nurturing condition here) 
 and to demonstrate that Chalmers's conclusion remains valid even when evaluated under the new non-nurturing condition.
 
-$\mathbf{H_1}$ will be verified using Pearson's correlation coefficient.
-
 $\mathbf{H_2}$: When only learning is evolved, the quality of generalized learning evolved will be equal with nurturing and without.
 
 This is to say that we do not expect the non-nurturing condition to significantly influence the quality of evolved generalized learning
@@ -271,9 +274,7 @@ with respect to the quality of generalized learning evolved under the nurturing 
 We expect this to be the case because while the non-nurturing condition does make learning less competitive,
 there still are no viable alternative strategies to learning that can be evolved.
 
-$\mathbf{H_2}$ will be verified using randomized ANOVA.
-
-\section{H3 and H4}
+\section{Hypotheses $H_3$ and $H_4$}
 
 The remaining hypotheses consider the effects of adding instincts to the model developed in the first two hypotheses.
 
@@ -289,28 +290,28 @@ We expect this to be the case because the number of genes required to represent 
 and while it is easy to find good solutions when only small numbers of genes are evolved,
 it becomes increasingly difficult to find good solutions as the number of genes involved increases.
 
-$\mathbf{H_3}$ will be verified using Pearson's correlation coefficient.
-
 $\mathbf{H_4}$: When both instincts and learning are evolved, the quality of generalized learning evolved will be proportional to the number of tasks in the evolutionary environment, both with and without nurturing.
 
 In other words, higher-quality generalized learning will evolve with low numbers of tasks in the evolutionary environment,
 and lower-quality generalized learning will evolve with higher numbers of tasks in the evolutionary environment.
+We expect this to be the case for the same reasons we expect $H_1$ to be supported;
+indeed, $H_4$ can be seen as a prediction that the mechanisms behind $H_1$ will still hold despite the addition of the possibility of evolving instincts.
 
-$\mathbf{H_4}$ will be verified using Pearson's correlation coefficient.
-
-$\mathbf{H_3}$ and $\mathbf{H_4}$ can be seen as sort of counterparts to each other 
+$H_3$ and $H_4$ can be seen as sort of counterparts to each other 
 because they predict that the quality of evolved instincts and generalized learning rules will exhibit opposite trends with respect to the number of tasks in the evolutionary environment; 
 that instincts will be strong under the conditions where generalized learning is weak, and vice-versa.
-However, it is important to remain clear about the fact that the outcomes of $\mathbf{H_3}$ and $\mathbf{H_4}$ have no dependencies on each other because they make predictions about instincts and generalized learning with respect to the number of tasks in the evolutionary environment, not each other;
+However, it is important to remain clear about the fact that the outcomes of $H_3$ and $H_4$ have no dependencies on each other because they make predictions about instincts and generalized learning with respect to the number of tasks in the evolutionary environment, not each other;
 it just so happens that we expect instincts and generalized learning to exhibit opposite trends
 but we do not necessarily expect a zero-sum relationship between the two.
 For example, it could be the case that learning and instincts are mutually beneficial,
 and so the quality of both evolved instincts and generalized learning would be proportional to the number of tasks in the evolutionary environment,
-in which case $\mathbf{H_4}$ would be supported but $\mathbf{H_3}$ would not.
-In another example, it could be the case that the quality of both evolved instincts and generalized learning are inversely proportional to the number of tasks in the evolutionary environment,
-in which case $\mathbf{H_3}$ would be supported but $\mathbf{H_4}$ would not.
+in which case $H_4$ would be supported but $H_3$ would not.
+Alternately, it could be the case that
+the larger number of genes required for more tasks and the resulting increase in complexity of the search space means that
+the quality of both evolved instincts and generalized learning are inversely proportional to the number of tasks in the evolutionary environment,
+in which case $H_3$ would be supported but $H_4$ would not.
 
-\section{H5 and H6}
+\section{Hypotheses $H_5$ and $H_6$}
 
 The final two hypotheses consider the relationship between the nurturing condition (present or absent) and the quality of evolved instincts or generalized learning. Neither of these hypotheses makes a prediction about the relationship between evolved instincts and generalized learning and the number of tasks in the evolutionary environment.
 
@@ -319,19 +320,24 @@ Likewise, it is expected that higher-quality instincts will evolve in the non-nu
 
 $\mathbf{H_5}$: When both instincts and learning are evolved, higher-quality instincts will evolve without nurturing than with.
 
-$\mathbf{H_5}$ will be verified using randomized ANOVA.
+$\mathbf{H_6}$: When both instincts and learning are evolved, higher-quality generalized learning will evolve with nurturing than without.
 
-$\mathbf{H_6}$: When both instincts and learning are evolved, higher-quality generalized learning will evolve with nonurturing than without.
-
-$\mathbf{H_6}$ will be verified using randomized ANOVA.
-
-Like $\mathbf{H_3}$ and $\mathbf{H_4}$, $\mathbf{H_5}$ and $\mathbf{H_6}$ can be seen as counterparts to each other
+Like $H_3$ and $H_4$, $H_5$ and $H_6$ can be seen as counterparts to each other
 because they predict that the quality of evolved instincts and generalized learning rules will exhibit opposite trends with respect to the presence or absence of nurturing.
-However, like with $\mathbf{H_3}$ and $\mathbf{H_4}$, it is important to remain clear about the fact that $\mathbf{H_5}$ and $\mathbf{H_6}$ have no dependencies on each other because they make predictions about instincts and generalized learning with respect to the presence or absence of nurturing, not each other.
+However, like with $H_3$ and $H_4$, it is important to remain clear about the fact that $H_5$ and $H_6$ have no dependencies on each other because they make predictions about instincts and generalized learning with respect to the presence or absence of nurturing, not each other.
 For example, it could be the case that both higher-quality instincts and higher-quality generalized learning evolve with nurturing than without,
-in which case $\mathbf{H_6}$ would be supported but $\mathbf{H_5}$ would not.
-In another example, it could be the case that both higher-quality instincts and higher-quality generalized learning evolve without than with,
-in which case $\mathbf{H_5}$ would be supported but $\mathbf{H_6}$ would not.
+in which case $H_6$ would be supported but $H_5$ would not.
+Alternately, it could be the case that both higher-quality instincts and higher-quality generalized learning evolve without than with,
+in which case $H_5$ would be supported but $H_6$ would not.
+
+\section{Hypothesis Testing}
+
+Hypotheses $H_1$, $H_3$, and $H_4$ make predictions about proportionality, 
+and so they will be tested using the Pearson correlation coefficient,
+which is a measure of the linear correlation between two variables.
+Hypotheses $H_2$, $H_5$, and $H_6$ make predictions about performance under one condition being better than performance under another condition,
+and so they will be tested using randomized ANOVA,
+which is a procedure for comparing performance curves \cite{Piater:1998aa}.
 
 % Operational Definitions
 \chapter{Operational Definitions}
