@@ -12,6 +12,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[round,authoryear]{natbib}
 
 \graphicspath{ {Figures/} }
 
@@ -26,8 +27,7 @@
 % Introduction
 \chapter{Introduction}
 
-% TODO: Include only the date when citing Chalmers here
-Chalmers (1990) demonstrated that evolutionary processes can produce artificial systems that learn \cite{Chalmers:1990aa}.
+\citet{Chalmers:1990aa} demonstrated that evolutionary processes can produce artificial systems that learn.
 The learning that emerged could be either specific to certain tasks or generalized for any task in the problem space.
 It was also possible that learning might not emerge if none of the behavior adjustment rules evolved performed better than adjusting behavior randomly.
 
@@ -41,7 +41,7 @@ Such effects could make it less likely for learning to evolve in favor of instin
 
 However, if the penalties incurred during the early stages of learning could be mitigated then learning may be more likely to evolve.
 In the biological world this can be observed in the form of nurturing, often from a parent to a child.
-In this way, nurturing may increase the competitive viability of learning by protecting the learner from otherwise costly errors made before proper behavior has been acquired \cite{Woehrer:2012aa}.
+In this way, nurturing may increase the competitive viability of learning by protecting the learner from otherwise costly errors made before proper behavior has been acquired \citep{Woehrer:2012aa}.
                                                                                                                                     
 This work examines whether learning is less likely to evolve when both instincts and learning have the potential to emerge,
 and how the introduction into the environment of a ``nurturing" condition---where mistakes made during learning are not penalized---influences the evolution of learning as opposed to an instinctual strategy where behavior is fixed during an individual's lifetime.
@@ -52,9 +52,9 @@ To explore these questions, this work uses a combination of genetic algorithms a
 %% Genetic Algorithms
 \section{Genetic Algorithms}
 
-Genetic algorithms were developed by Holland (1975) to explore using artificial evolution as an optimization process \cite{Holland:1975aa}.
+Genetic algorithms were developed by \citet{Holland:1975aa} to explore using artificial evolution as an optimization process.
 Many others have built on and applied Holland's ideas for genetic algorithms over the intervening decades,
-and several other forms of evolutionary computation have since been developed \cite{Engelbrecht:2007aa}.
+and several other forms of evolutionary computation have since been developed \citep{Engelbrecht:2007aa}.
 What follows in this section is a brief explanation of one typical version of a genetic algorithm that focuses on the mechanisms used in this thesis,
 but it should be noted that many other variations exist.
 
@@ -88,8 +88,8 @@ This process is repeated until some stopping condition is met, typically after a
 %% Artificial Neurons
 \section{Artificial Neurons}
 
-The concept of an artificial neuron was introduced first by McCulloch and Pitts (1943) as a theoretical model of biological nervous activity \cite{McCulloch:1943aa}.
-Many others have expanded upon this neural model and have developed a number of different neural models \cite{Engelbrecht:2007aa}.
+The concept of an artificial neuron was introduced first by \citet{McCulloch:1943aa} as a theoretical model of biological nervous activity.
+Many others have expanded upon this neural model and have developed a number of different neural models \citep{Engelbrecht:2007aa}.
 What follows in this section is a brief explanation of one typical version of an artificial neuron that focuses on the mechanisms used in this thesis,
 but it should be noted that many other variations exist.
 
@@ -123,10 +123,10 @@ Learning is a technique by which the weights of an artificial neuron are updated
 One type of learning is known as \emph{supervised learning}, where the neuron is provided with a data set, known as the \emph{training set}, consisting of training patterns of input vectors with associated target outputs.
 The weights of the neuron are then adjusted until the error between the actual outputs of the neuron and the target outputs in the patterns is minimized.
 
-An example of a supervised learning rule is the so-called \emph{delta rule} \cite{Widrow:1960aa}.
+An example of a supervised learning rule is the so-called \emph{delta rule} \citep{Widrow:1960aa}.
 The delta rule requires the definition of an error function, $\mathcal{E}$, to measure the neuron's error in approximating training targets.
 The sum of squared errors is usually used, given by
-
+Z
 \begin{displaymath}
 \mathcal{E} = \sum_{p=1}^{P_T}(t_p-o_p)^2
 \end{displaymath}
@@ -160,7 +160,7 @@ giving
 \end{displaymath}
 
 Artificial neurons are generally connected together into artificial neural networks to perform more sophisticated computation;
-however, this work is based closely on the work of Chalmers which considered single neurons in isolation \cite{Chalmers:1990aa}.
+however, this work is based closely on the work of \citet{Chalmers:1990aa} which considered single neurons in isolation.
 
 %% Artificial Neural Networks
 \section{Artificial Neural Networks}
@@ -169,7 +169,7 @@ however, this work is based closely on the work of Chalmers which considered sin
 \section{Neuroevolution}
 
 % Neural network connection strengths, topology, and learning rules can be encoded by strings, meaning they can be evolved by genetic algorithms.
-Any feature of an artificial neuron, such as connection weights, activation functions, learning rules, and input features, can be subjected to an evolutionary process after being string-encoded \cite{Yao:1999lp}.
+Any feature of an artificial neural network, such as topology, connection weights, activation functions, learning rules, and input features, can be subjected to an evolutionary process after being string-encoded \citep{Yao:1999lp}.
 However, this work will focus on the evolution of connection weights and learning rules.
 
 The connection weights of a non-learning neuron can be evolved as the fixed response of that neuron to input.
@@ -191,8 +191,8 @@ whereas Chalmers examined only the possibility of evolving learning rules.
 \section{The Evolution of Learning}
 
 The evolution of learning in artificial neural networks is a topic of great interest to the research community, 
-and while many researches have investigated many different approaches to the evolution of learning,
-many open questions still remain \cite{Soltoggio:2017bl}.
+and while many researchers have investigated many different approaches to the evolution of learning,
+many open questions still remain \citep{Soltoggio:2017bl}.
 
 Evolution and learning are both forms of adaptation.
 Evolution takes place across generations whereas learning takes places within an individual's lifetime.
@@ -200,43 +200,42 @@ Evolution can produce adaptive behaviors such as learning or non-adaptive behavi
 
 If an environment is sufficiently diverse or dynamic, instinctual behavior is not reasonably adequate for good task performance;
 this is because such an environment will invariably present novel tasks to which the instinctual behavior is not well-adapted.
+Evolved learning behavior that is scalable and adaptive to unknown or changing situations can be seen in countless species in nature \citep{Shah:2015hs}.
 
-Evolved learning behavior that is scalable and adaptive to unknown or changing situations can be seen in countless species in nature \cite{Shah:2015hs}.
-
-Bengio et al. (1990) first proposed the optimization of a learning rule via evolutionary search \cite{Bengio:1990aa}.
-Chalmers \cite{Chalmers:1990aa} evolved learning rules by encoding the parameters of a template formula as strings, demonstrating that the delta rule for supervised learning can be evolved in certain situations for artificial neurons in static environments.
-Fontanari and Meir (1991) expanded upon Chalmers's approach to evolve a learning algorithm for single-layer networks with binary weights \cite{Fontanari:1991aa}.
+\citet{Bengio:1990aa} first proposed the optimization of a learning rule via evolutionary search.
+\citet{Chalmers:1990aa} evolved learning rules by encoding the parameters of a template formula as strings, demonstrating that the delta rule for supervised learning can be evolved in certain situations for artificial neurons in static environments.
+\citet{Fontanari:1991aa} expanded upon Chalmers's approach to evolve a learning algorithm for single-layer networks with binary weights.
 
 % TODO: Say more about the work of both Chalmers and Shaw. 
 
-McQuesten and Miikulainen (1997) evolved reinforcement learning by culling subpar individuals and having parent networks teach their offspring using backpropagation \cite{McQuesten:1997aa}.
-Niv et al. (2002) demonstrated the evolution of reinforcement learning in uncertain environments for networks with a single binary output \cite{Niv:2002aa}.
-Shah (2015) similarly demonstrated the evolution of reinforcement learning in changing environments for networks with large numbers of rational-valued outputs \cite{Shah:2015hs}.
+\citet{McQuesten:1997aa} evolved reinforcement learning by culling subpar individuals and having parent networks teach their offspring using backpropagation.
+\citet{Niv:2002aa} demonstrated the evolution of reinforcement learning in uncertain environments for networks with a single binary output.
+\citet{Shah:2015hs} similarly demonstrated the evolution of reinforcement learning in changing environments for networks with large numbers of rational-valued outputs.
 
 %% Nurturing
 \section{Nurturing}
 
-\emph{Nurturing} is defined as ``the contribution of time, energy, or other resources by one individual to the expected physical, mental, social, or other development of another individual with which it has an ongoing relationship" \cite{Woehrer:2012aa}.
+\emph{Nurturing} is defined as ``the contribution of time, energy, or other resources by one individual to the expected physical, mental, social, or other development of another individual with which it has an ongoing relationship" \citep{Woehrer:2012aa}.
 
-Nurturing is prevalent in the biological world and can be an important contributing factor to the evolution of learning \cite{Woehrer:2012aa} \cite{Eskridge:2012aa},
-an idea which has recently been echoed by others \cite{Soltoggio:2017bl}.
+Nurturing is prevalent in the biological world and can be an important contributing factor to the evolution of learning \citep{Woehrer:2012aa,Eskridge:2012aa},
+an idea which has recently been echoed by others \citep{Soltoggio:2017bl}.
 
 Nurturing itself can be either instinctive or learned.
-Leonce, Hoke, and Hougen (2012) demonstrated the evolution of instinctive nurturing in robots \cite{Leonce:2012aa}.
+\citet{Leonce:2012aa} demonstrated the evolution of instinctive nurturing in robots.
 
 %TODO: Include material here on the virtuous cycle that is hypothesized to exist between nurturing and learning.
 
 Nurturing can cover the initial costs of a learner and the resulting benefits of learning can be paid forward to the next generation.
 In this way, nurturing can promote the evolution of learning.
 
-The work of McQuesten and Miikkulainen (1997),
+The work of \citet{McQuesten:1997aa},
 where it was shown that neuroevolution could benefit from parent networks teaching their offspring using backpropagation,
-is the first known example demonstrating that nurturing can promote the evolution of learning \cite{McQuesten:1997aa};
+is the first known example demonstrating that nurturing can promote the evolution of learning;
 although McQuesten and Miikkulainen did not refer to the teaching they used as nurturing,
 it conforms to the definition followed in this thesis.
-Eskridge \& Hougen \cite{Eskridge:2012aa} conducted experiments involving food patch estimation in uncertain environments,
+\citet{Eskridge:2012aa} conducted experiments involving food patch estimation in uncertain environments,
 and their results demonstrated that nurturing as both social learning and safe exploration can promote the evolution of learning.
-Shah \cite{Shah:2015hs} demonstrated that nurturing as task simplification can promote the evolution of reinforcement learning in changing environments.
+\citet{Shah:2015hs} demonstrated that nurturing as task simplification can promote the evolution of reinforcement learning in changing environments.
 
 This work explores nurturing as safe exploration in that individuals do not incur fitness penalties for mistakes made during the learning process.
 
@@ -365,7 +364,7 @@ and so higher-quality generalized learning would evolve with nurturing than with
 in which case $H_6$ would be supported but $H_5$ would not.
 Alternately, it could be the case that the penalties incurred during learning under the non-nurturing condition promote the evolution of faster, more effective generalized learning than that which tends to evolve under the nurturing condition,
 and so higher-quality generalized learning evolves without nurturing than with,
-which in turn promotes the evolution of better instincts in an example of what is known as the \emph{Baldwin effect} \cite{Floreano:2008wv},
+which in turn promotes the evolution of better instincts in an example of what is known as the \emph{Baldwin effect} \citep{Floreano:2008wv},
 in which case $H_5$ would be supported but $H_6$ would not.
 
 \section{Hypothesis Testing}
@@ -374,12 +373,12 @@ Hypotheses $H_1$, $H_3$, and $H_4$ make predictions about proportionality,
 and so they will be tested using the Pearson correlation coefficient,
 which is a measure of the linear correlation between two variables.
 Hypotheses $H_2$, $H_5$, and $H_6$ make predictions about performance under one condition being better than performance under another condition,
-and so they will be tested using a randomized ANOVA procedure for comparing performance curves \cite{Piater:1998aa}.
+and so they will be tested using a randomized ANOVA procedure for comparing performance curves \citep{Piater:1998aa}.
 
 % Operational Definitions
 \chapter{Operational Definitions}
 
-An \emph{individual} is a candidate solution to the genetic algorithm's fitness function whose characteristics are represented by a chromosome \cite{Engelbrecht:2007aa}. In this work, individuals are manifest as artificial neurons. 
+An \emph{individual} is a candidate solution to the genetic algorithm's fitness function whose characteristics are represented by a chromosome \citep{Engelbrecht:2007aa}. In this work, individuals are manifest as artificial neurons. 
 
 A \emph{task} is a set of input-output patterns,
 where for each pattern in the task an individual is evaluated on its ability to produce the pattern output when activated with the corresponding pattern inputs.
@@ -407,7 +406,7 @@ In the ``nurturing" condition, then, an individual's lifetime fitness is simply 
 
 The weight update rule for an artificial neuron needs to be based on the components of that neuron which are, as covered in Section 1.2, $a_j$ the activation of the input unit $j$, $o_i$ the activation of the output unit $i$, $t_i$ the training signal on output unit $i$, and $w_{ij}$ the current value of the connection strength from input $j$ to output $i$.
 
-Following Chalmers (1990), the genome encodes a function $F$ such that $\Delta w_{ij} = F(a_j, o_i, t_i, w_{ij})$, where $F$ is a linear function of its four parameters and their six pairwise products. Thus $F$ is determined by specifying ten coefficients.
+Following \cite{Chalmers:1990aa}, the genome encodes a function $F$ such that $\Delta w_{ij} = F(a_j, o_i, t_i, w_{ij})$, where $F$ is a linear function of its four parameters and their six pairwise products. Thus $F$ is determined by specifying ten coefficients.
 
 The genome encodes these ten coefficients, as well as an eleventh ``scale" parameter. That is,
 \[
@@ -544,7 +543,7 @@ The linear correlation between the generalized learning fitness and the number o
 the nurturing condition (Pearson correlation, $\rho=0.64,$ $p < 0.001$)
 and the non-nurturing condition (Pearson correlation, $\rho=0.62,$ $p < 0.001$).
 
-The differences between the results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p = 0.082$) \cite{Piater:1998aa}.
+The differences between the results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p = 0.082$) \citet{Piater:1998aa}.
 
 \begin{figure}[H]
 	\centering
@@ -680,7 +679,7 @@ as well as the increasing adaptation of the individuals to their environment.
 Figure \ref{fig:ChalmersLearningTest} demonstrates that the generalized learning capabilities of evolved individuals increases with the number of evolutionary tasks.
 
 Under both evaluation conditions, the generalized learning fitness was statistically significantly proportional to the number of evolutionary tasks, suggesting that the quality of evolved generalized learning increases with the number of evolutionary tasks.
-This result serves as a re-confirmation of Chalmers's original findings \cite{Chalmers:1990aa}.
+This result serves as a re-confirmation of Chalmers's original findings \citep{Chalmers:1990aa}.
 
 However, in both evaluation conditions,
 the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition by a statistically significant margin,
@@ -788,7 +787,7 @@ it was found that higher-quality generalized learning was expected to evolve und
 The contributions of this research are
 concrete evidence that nurturing promotes the evolution of learning,
 clarification of the role that instincts may play in the evolutionary process,
-and a reconfirmation of Chalmers's basic conclusions \cite{Chalmers:1990aa}.
+and a reconfirmation of Chalmers's basic conclusions \citep{Chalmers:1990aa}.
 
 % Future Work
 \chapter{Future Work}
@@ -800,13 +799,13 @@ Baldwin (1896) argued that learning accelerates evolution because suboptimal ind
 Lifetime learning often involves a cost because the individual may be at risk at an early stage of its life or it may modify its behavior in ways that are not functional for its survival.
 Baldwin suggested that evolution tends to select individuals that are born with some of the useful features that would otherwise be learned.
 However, a consequence of this effect is that learned features may gradually become assimilated into the genotype and reduce the role of learning;
-this is not necessarily a good effect if it is desirable for the individuals to retain the ability to learn over evolutionary time. \cite{Floreano:2008wv} 
+this is not necessarily a good effect if it is desirable for the individuals to retain the ability to learn over evolutionary time \citep{Floreano:2008wv}.
 
 Nurturing can reduce the evolutionary costs of learning and thus may be able to inhibit the Baldwin effect.
 Inhibiting the Baldwin effect may result in evolved individuals that retain greater learning capabilities over evolutionarily significant periods of time.
 
 \bibliography{Bibliography}{}
-\bibliographystyle{plain}
+\bibliographystyle{plainnat}
 
 \makebackmatter
 \end{document}
