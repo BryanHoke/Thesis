@@ -27,12 +27,12 @@
 \chapter{Introduction}
 
 % TODO: Include only the date when citing Chalmers here
-Chalmers \cite{chalmers-evolution-learning} demonstrated that evolutionary processes can produce artificial systems that learn.
+Chalmers (1990) demonstrated that evolutionary processes can produce artificial systems that learn \cite{Chalmers:1990aa}.
 The learning that emerged could be either specific to certain tasks or generalized for any task in the problem space.
 It was also possible that learning might not emerge if none of the behavior adjustment rules evolved performed better than adjusting behavior randomly.
 
 In Chalmers's work, learning was the only viable phenotypic strategy that could emerge from evolution.
-However, if other strategies, such as fixed behavioral responses (responses that don't change during an individual's lifetime), were able to emerge alongside the strategy of learning, it might be found that learning is not always the strategy that emerges from evolution.
+However, if other strategies, such as ``instinctual" behavioral responses (i.e., responses that are innate), were able to emerge alongside the strategy of learning, it might be found that learning is not always the strategy that emerges from evolution.
 Presumably, the evolutionary environment (or objective function) would have the effect of influencing which strategies emerge; after all, it is reasonable to think that no one strategy would always be optimal for every possible kind of environment. % TODO: Check writing style
 
 A disadvantage of learning is that individuals tend to have low fitness early in their life before they have had the opportunity to learn correct behavior.
@@ -41,13 +41,13 @@ Such effects could make it less likely for learning to evolve in favor of instin
 
 However, if the penalties incurred during the early stages of learning could be mitigated then learning may be more likely to evolve.
 In the biological world this can be observed in the form of nurturing, often from a parent to a child.
-In this way, nurturing may increase the competitive viability of learning by protecting the learner from otherwise costly errors made before proper behavior has been acquired \cite{nurturing-definition}.
+In this way, nurturing may increase the competitive viability of learning by protecting the learner from otherwise costly errors made before proper behavior has been acquired \cite{Woehrer:2012aa}.
                                                                                                                                     
 This work examines whether learning is less likely to evolve when both instincts and learning have the potential to emerge,
-and how the introduction into the environment of a ``nurturing" condition---where mistakes made during learning are not penalized---influences the evolution of learning as opposed to an ``instinctual" strategy where behavior is fixed during an individual's lifetime.
+and how the introduction into the environment of a ``nurturing" condition---where mistakes made during learning are not penalized---influences the evolution of learning as opposed to an instinctual strategy where behavior is fixed during an individual's lifetime.
 % TODO: Footnote that instincts will be operationally defined later
 
-To explore these questions, this work uses a combination of genetic algorithms and artificial neurons applied to a set of supervised learning tasks (the same tasks, in fact, that were used by Chalmers). The rest of this chapter introduces the following topics, in turn: genetic algorithms, artificial neurons, neuroevolution, the evolution of learning, and nurturing.
+To explore these questions, this work uses a combination of genetic algorithms and artificial neurons applied to a set of supervised learning tasks (the same tasks, in fact, that were used by Chalmers). The rest of this chapter introduces the following topics, in turn: genetic algorithms, artificial neurons, artificial neural networks, neuroevolution, the evolution of learning, and nurturing.
 
 %% Genetic Algorithms
 \section{Genetic Algorithms}
@@ -160,7 +160,7 @@ giving
 \end{displaymath}
 
 Artificial neurons are generally connected together into artificial neural networks to perform more sophisticated computation;
-however, this work is based closely on the work of Chalmers which considered single neurons in isolation \cite{chalmers-evolution-learning}.
+however, this work is based closely on the work of Chalmers which considered single neurons in isolation \cite{Chalmers:1990aa}.
 
 %% Artificial Neural Networks
 \section{Artificial Neural Networks}
@@ -204,7 +204,7 @@ this is because such an environment will invariably present novel tasks to which
 Evolved learning behavior that is scalable and adaptive to unknown or changing situations can be seen in countless species in nature \cite{Shah:2015hs}.
 
 Bengio et al. (1990) first proposed the optimization of a learning rule via evolutionary search \cite{Bengio:1990aa}.
-Chalmers \cite{chalmers-evolution-learning} evolved learning rules by encoding the parameters of a template formula as strings, demonstrating that the delta rule for supervised learning can be evolved in certain situations for artificial neurons in static environments.
+Chalmers \cite{Chalmers:1990aa} evolved learning rules by encoding the parameters of a template formula as strings, demonstrating that the delta rule for supervised learning can be evolved in certain situations for artificial neurons in static environments.
 Fontanari and Meir (1991) expanded upon Chalmers's approach to evolve a learning algorithm for single-layer networks with binary weights \cite{Fontanari:1991aa}.
 
 % TODO: Say more about the work of both Chalmers and Shaw. 
@@ -216,13 +216,13 @@ Shah (2015) similarly demonstrated the evolution of reinforcement learning in ch
 %% Nurturing
 \section{Nurturing}
 
-\emph{Nurturing} is defined as ``the contribution of time, energy, or other resources by one individual to the expected physical, mental, social, or other development of another individual with which it has an ongoing relationship" \cite{nurturing-definition}.
+\emph{Nurturing} is defined as ``the contribution of time, energy, or other resources by one individual to the expected physical, mental, social, or other development of another individual with which it has an ongoing relationship" \cite{Woehrer:2012aa}.
 
-Nurturing is prevalent in the biological world and can be an important contributing factor to the evolution of learning \cite{nurturing-definition} \cite{eskridge-learning-uncertain-environments},
+Nurturing is prevalent in the biological world and can be an important contributing factor to the evolution of learning \cite{Woehrer:2012aa} \cite{Eskridge:2012aa},
 an idea which has recently been echoed by others \cite{Soltoggio:2017bl}.
 
 Nurturing itself can be either instinctive or learned.
-Leonce, Hoke, and Hougen (2012) demonstrated the evolution of instinctive nurturing in robots \cite{evolution-of-nurturing}.
+Leonce, Hoke, and Hougen (2012) demonstrated the evolution of instinctive nurturing in robots \cite{Leonce:2012aa}.
 
 %TODO: Include material here on the virtuous cycle that is hypothesized to exist between nurturing and learning.
 
@@ -234,7 +234,7 @@ where it was shown that neuroevolution could benefit from parent networks teachi
 is the first known example demonstrating that nurturing can promote the evolution of learning \cite{McQuesten:1997aa};
 although McQuesten and Miikkulainen did not refer to the teaching they used as nurturing,
 it conforms to the definition followed in this thesis.
-Eskridge \& Hougen \cite{eskridge-learning-uncertain-environments} conducted experiments involving food patch estimation in uncertain environments,
+Eskridge \& Hougen \cite{Eskridge:2012aa} conducted experiments involving food patch estimation in uncertain environments,
 and their results demonstrated that nurturing as both social learning and safe exploration can promote the evolution of learning.
 Shah \cite{Shah:2015hs} demonstrated that nurturing as task simplification can promote the evolution of reinforcement learning in changing environments.
 
@@ -680,7 +680,7 @@ as well as the increasing adaptation of the individuals to their environment.
 Figure \ref{fig:ChalmersLearningTest} demonstrates that the generalized learning capabilities of evolved individuals increases with the number of evolutionary tasks.
 
 Under both evaluation conditions, the generalized learning fitness was statistically significantly proportional to the number of evolutionary tasks, suggesting that the quality of evolved generalized learning increases with the number of evolutionary tasks.
-This result serves as a re-confirmation of Chalmers's original findings \cite{chalmers-evolution-learning}.
+This result serves as a re-confirmation of Chalmers's original findings \cite{Chalmers:1990aa}.
 
 However, in both evaluation conditions,
 the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition by a statistically significant margin,
@@ -788,7 +788,7 @@ it was found that higher-quality generalized learning was expected to evolve und
 The contributions of this research are
 concrete evidence that nurturing promotes the evolution of learning,
 clarification of the role that instincts may play in the evolutionary process,
-and a reconfirmation of Chalmers's basic conclusions \cite{chalmers-evolution-learning}.
+and a reconfirmation of Chalmers's basic conclusions \cite{Chalmers:1990aa}.
 
 % Future Work
 \chapter{Future Work}
