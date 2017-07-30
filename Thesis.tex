@@ -547,14 +547,19 @@ This chapter presents the results of all experiments performed.
 \section{Results of Initial Evolutionary Runs}
 
 This section presents the results of experiments where learning rules can be evolved but initial weights cannot, performed under both the nurturing and non-nurturing conditions.
-In these experiments, each evolutionary run lasted for 4000 generations and only 10 repetitions were performed under each condition.
 % TODO: Mention random weights
 
-The linear correlation between the generalized learning fitness and the number of evolutionary tasks is statistically significant for both
-the nurturing condition (Pearson correlation, $\rho=0.64,$ $p < 0.001$)
-and the non-nurturing condition (Pearson correlation, $\rho=0.62,$ $p < 0.001$).
+The linear correlation between the intra-learning generalized learning fitness and the number of evolutionary tasks is statistically significant for both
+the nurturing condition (Pearson correlation, $\rho=0.61,$ $p < 0.001$)
+and the non-nurturing condition (Pearson correlation, $\rho=0.60,$ $p < 0.001$).
 
-The differences between the results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p = 0.082$) \citet{Piater:1998aa}.
+The differences between the intra-learning generalization test results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p = 0.0270$) \citet{Piater:1998aa}.
+
+The linear correlation between the post-learning generalized learning fitness and the number of evolutionary tasks is statistically significant for both
+the nurturing condition (Pearson correlation, $\rho=0.63,$ $p < 0.001$)
+and the non-nurturing condition (Pearson correlation, $\rho=0.59,$ $p < 0.001$).
+
+The differences between the post-learning generalization test results for the nurturing and non-nurturing conditions are not statistically significant (randomized ANOVA, algorithm $p = 0.2120$, interaction $p = 0.0350$) \citet{Piater:1998aa}.
 
 \begin{figure}[H]
 	\centering
@@ -563,14 +568,20 @@ The differences between the results for the nurturing and non-nurturing conditio
 	\label{fig:T1Evolution}
 \end{figure}
 
-% TODO: Add plot of best individuals to serve as learning test plot
-
-% The learning generalization test with nurturing
+% The intra-learning generalization test
 \begin{figure}[H]
 	\centering
-	\includegraphics{ChalmersLearningTest.pdf}
-	\caption{The average generalized learning capabilities for the best individuals evolved under the nurturing and non-nurturing conditions.}
-	\label{fig:ChalmersLearningTest}
+	\includegraphics{T1IntraLearningGeneralizationTest.pdf}
+	\caption{Intra-learning/non-nurturing generalization test on test tasks for the best individuals evolved under the nurturing and non-nurturing conditions.}
+	\label{fig:T1IntraLearningGeneralizationTest}
+\end{figure}
+
+% The post-learning generalization test
+\begin{figure}[H]
+	\centering
+	\includegraphics{T1PostLearningGeneralizationTest.pdf}
+	\caption{Post-learning/nurturing generalization test on test tasks for the best individuals evolved under the nurturing and non-nurturing conditions.}
+	\label{fig:T1PostLearningGeneralizationTest}
 \end{figure}
 
 %% Intra-Learning and Post-Learning Fitness Test
@@ -690,20 +701,23 @@ This is the same trend seen in Figure 1 of \citet{Chalmers:1990aa}, which depict
 This similarity to previous findings helps to validate our setup as sufficient to observe the evolution of learning
 and indicates that we have sufficiently replicated Chalmers's setup to be confident in comparing our results to his.
 
-Figure \ref{fig:ChalmersLearningTest} demonstrates that the generalized learning capabilities of evolved individuals increases with the number of evolutionary tasks.
-
-Under both evaluation conditions, the generalized learning fitness was statistically significantly proportional to the number of evolutionary tasks, suggesting that the quality of evolved generalized learning increases with the number of evolutionary tasks.
+Figures \ref{fig:T1IntraLearningGeneralizationTest} and \ref{fig:T1PostLearningGeneralizationTest} demonstrate that the generalized learning capabilities of evolved individuals increases with the number of evolutionary tasks.
+This is the same trend shown by the ``Test Fitness" line in Figure 2 of \citet{Chalmers:1990aa}.
+Under both evaluation conditions in each test,
+the generalized learning fitness was statistically significantly proportional to the number of evolutionary tasks,
+suggesting that the quality of evolved generalized learning increases with the number of evolutionary tasks.
 This result serves as a re-confirmation of Chalmers's original findings \citep{Chalmers:1990aa}.
 
-However, in both evaluation conditions,
-the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition by a statistically significant margin,
+In the post-learning evaluation,
+the difference between the quality of generalized learning evolved under the nurturing and non-nurturing conditions was not found to be statistically significant.
+This supports our hypothesis that the presence or absence of nurturing will not affect the quality of evolved generalized learning when learning rules can be evolved but initial weights cannot. 
+
+However,
+in the intra-learning evaluation,
+the learning rule evolved under the non-nurturing condition performed better than the learning rule evolved under the nurturing condition by a statistically significant margin,
 suggesting that better generalized learning is more likely to evolve under the nurturing condition.
 This is contrary to our hypothesis that the presence or absence of nurturing would not affect the quality of evolved generalized learning 
 when learning rules could be evolved but initial weights could not.
-A possible explanation for this unexpected result is that the individuals evolved under the nurturing condition were evaluated using only the post-learning fitness test,
-while the individuals evolved under the non-nurturing condition were evaluated only under the intra-learning test.
-The intra-learning test is expected to yield lower fitness scores than the post-learning test,
-and this difference may account for the result found.
 
 %% Intra-Learning and Post-Learning Fitness Test
 \section{Intra-Learning and Post-Learning Fitness Test}
