@@ -725,7 +725,8 @@ This is the same trend shown by the ``Test Fitness" line in Figure 2 of \citet{C
 Under both evaluation conditions in each test,
 the generalized learning fitness was statistically significantly proportional to the number of evolutionary tasks,
 suggesting that the quality of evolved generalized learning increases with the number of evolutionary tasks.
-This result serves as a re-confirmation of Chalmers's original findings \citep{Chalmers:1990aa}.
+This result serves as a re-confirmation of Chalmers's original findings \citep{Chalmers:1990aa}
+and shows that they are robust to the change to a non-nurturing condition.
 
 In the post-learning evaluation,
 the difference between the quality of generalized learning evolved under the nurturing and non-nurturing conditions was not found to be statistically significant.
@@ -734,9 +735,14 @@ This supports our hypothesis that the presence or absence of nurturing will not 
 However,
 in the intra-learning evaluation,
 the learning rule evolved under the non-nurturing condition performed better than the learning rule evolved under the nurturing condition by a statistically significant margin,
-suggesting that better generalized learning is more likely to evolve under the nurturing condition.
-This is contrary to our hypothesis that the presence or absence of nurturing would not affect the quality of evolved generalized learning 
+suggesting that faster generalized learning is more likely to evolve under the non-nurturing condition.
+If ``the quality of generalized learning" is interpreted as including a higher learning rate,
+then this could be seen to be contrary to our hypothesis that the presence or absence of nurturing would not affect the quality of evolved generalized learning 
 when learning rules could be evolved but initial weights could not.
+Nonetheless,
+it is important to note that there was no significant difference found in the quality of the learned behaviors at the end of the learning period,
+meaning that the higher learning rate is note adaptive under the nurturing condition,
+only under the non-nurturing condition.
 
 %% Intra-Learning and Post-Learning Fitness Test
 \section{Intra-Learning and Post-Learning Fitness Test}
@@ -752,8 +758,10 @@ those individuals evolved under the non-nurturing condition on average outperfor
 and when evaluating using the post-learning (nurturing condition) test,
 those individuals evolved under the nurturing condition on average outperform those evolved under the non-nurturing condition.
 
-individuals evolved under the non-nurturing condition perform better when re-evaluated using the intra-learning fitness test/non-nurturing condition than when using the post-learning test/nurturing condition,
+Individuals evolved under the non-nurturing condition perform better when re-evaluated using the intra-learning fitness test/non-nurturing condition than when using the post-learning test/nurturing condition,
 and individuals evolved using the nurturing condition perform better when re-evaluated using the post-learning test/nurturing condition than when using the intra-learning test/non-nurturing condition.
+This suggests that the nurturing and non-nurturing conditions present somewhat different criteria for optimal behavior,
+and that being very well-adapted adaptation to one condition means being somewhat less well-adapted to the other condition.
 
 %% Pre-Learning Test
 \section{Pre-Learning Test}
