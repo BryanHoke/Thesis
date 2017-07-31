@@ -553,13 +553,13 @@ The linear correlation between the intra-learning generalized learning fitness a
 the nurturing condition (Pearson correlation, $\rho=0.61,$ $p < 0.001$)
 and the non-nurturing condition (Pearson correlation, $\rho=0.60,$ $p < 0.001$).
 
-The differences between the intra-learning generalization test results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p = 0.0270$) \citet{Piater:1998aa}.
+The differences between the intra-learning generalization test results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p = 0.0270$) \citep{Piater:1998aa}.
 
 The linear correlation between the post-learning generalized learning fitness and the number of evolutionary tasks is statistically significant for both
 the nurturing condition (Pearson correlation, $\rho=0.63,$ $p < 0.001$)
 and the non-nurturing condition (Pearson correlation, $\rho=0.59,$ $p < 0.001$).
 
-The differences between the post-learning generalization test results for the nurturing and non-nurturing conditions are not statistically significant (randomized ANOVA, algorithm $p = 0.2120$, interaction $p = 0.0350$) \citet{Piater:1998aa}.
+The differences between the post-learning generalization test results for the nurturing and non-nurturing conditions are not statistically significant (randomized ANOVA, algorithm $p = 0.2120$, interaction $p = 0.0350$) \citep{Piater:1998aa}.
 
 \begin{figure}[H]
 	\centering
@@ -597,6 +597,10 @@ as such, it will be referred to as the ``intra-learning fitness test."
 Similarly, the fitness test for the nurturing condition can be seen as testing how much fitness an individual would collect on average after learning as been completed;
 it will be referred to as the ``post-learning fitness test."
 
+The differences between the intra-learning test results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.0001,$ interaction $p = 0.0090$) \citep{Piater:1998aa}.
+
+The differences between the post-learning test results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.0001,$ interaction $p = 0.0220$) \citep{Piater:1998aa}.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics{LearningInstinctsEvolution.pdf}
@@ -608,12 +612,14 @@ it will be referred to as the ``post-learning fitness test."
 	\centering
 	\includegraphics{NonNurturingFitnessTestPlot.pdf}
 	\caption{Intra-learning/non-nurturing fitness test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\label{fig:T1IntraLearningFitnessTest}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NurturingFitnessTestPlot.pdf}
 	\caption{Post-learning/nurturing fitness test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\label{fig:T1PostLearningFitnessTest}
 \end{figure}
 
 %% Pre-Learning Test
@@ -627,12 +633,13 @@ The inverse-linear correlation between the pre-learning fitness and the number o
 the nurturing condition (Pearson correlation, $\rho=-0.63,$ $p < 0.001$)
 and the non-nurturing condition (Pearson correlation, $\rho=-0.83,$ $p < 0.001$).
 
-The differences between the results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p < 0.001$).
+The differences between the results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p < 0.001$) \citep{Piater:1998aa}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NetworkTestPlot.pdf}
 	\caption{Pre-learning/instinct test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\label{fig:PreLearningTest}
 \end{figure}
 
 %% Learning Improvement
@@ -640,6 +647,12 @@ The differences between the results for the nurturing and non-nurturing conditio
 
 To determine the average amount of useful learning that evolves for a given number of tasks we can examine the difference between the post-learning fitness and the pre-learning (instinctive) fitness, as shown in Figure \ref{fig:LearningImprovement}.
 This is because the pre-learning fitness is the individual's fitness before it learns, whereas the post-learning fitness is an individual's fitness after it learns.
+
+The linear correlation between the learning improvement and the number of evolutionary tasks is statistically significant for both
+the nurturing condition (Pearson correlation, $\rho=-0.39,$ $p < 0.001$)
+and the non-nurturing condition (Pearson correlation, $\rho=-0.40,$ $p < 0.001$). 
+
+The differences between the results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p < 0.001$) \citep{Piater:1998aa}.
 
 \begin{figure}[H]
 	\centering
@@ -653,23 +666,29 @@ This is because the pre-learning fitness is the individual's fitness before it l
 
 The portion of the chromosome that encodes the learning rule is isolated and evaluated on the evolutionary tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the contribution of the portion of the chromosome that encodes the learning rule to the fitness of the whole chromosome.
 
+The differences between the intra-learning test results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.0001,$ interaction $p < 0.0001$) \citep{Piater:1998aa}.
+
+The differences between the post-learning test results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.0001,$ interaction $p < 0.0001$) \citep{Piater:1998aa}.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics{NonNurturingLearningTestPlot.pdf}
 	\caption{Random-start, intra-learning/non-nurturing learning test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\label{fig:IntraLearningWeightGeneralizationTest}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{NurturingLearningTestPlot.pdf}
 	\caption{Random-start, post-learning/nurturing learning test on evolutionary tasks for individuals evolved under the nurturing and non-nurturing conditions.}
+	\label{fig:PostLearningWeightGeneralizationTest}
 \end{figure}
 
 %% Task Generalization Learning Test
 \section{Task Generalization Learning Test}
 
 The portion of the chromosome which encodes the learning rule is isolated and evaluated on the test tasks by initializing a network with random weights and the encoded learning rule, with the intention of determining the capacity for generalized learning that was evolved.
-The differences between the results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p < 0.001$).
+The differences between the results for the nurturing and non-nurturing conditions are statistically significant (randomized ANOVA, algorithm $p < 0.001$, interaction $p < 0.001$) \citep{Piater:1998aa}.
 
 The linear correlation between the generalized learning fitness and the number of evolutionary tasks is statistically significant for
 the intra-learning test under both the nurturing condition (Pearson correlation, $\rho=0.62,$ $p < 0.001$) 
@@ -722,35 +741,43 @@ when learning rules could be evolved but initial weights could not.
 %% Intra-Learning and Post-Learning Fitness Test
 \section{Intra-Learning and Post-Learning Fitness Test}
 
-Figure \ref{fig:LearningInstinctsEvolution} demonstrates the increase of maximum fitness with the progression of generations,
-as well as the increasing adaptation of the individuals to their environment.
-
+Figure \ref{fig:LearningInstinctsEvolution} shows the increase of maximum fitness with the progression of generations,
+which demonstrates the increasing adaptation of the individuals to their environment.
+This is the same trend shown by Figure \ref{fig:T1Evolution} and Figure 1 of \citet{Chalmers:1990aa}.
 Under both conditions it is clear that the objective function becomes more difficult to satisfy as the number of evolutionary tasks increases. 
 
-Individuals evolved using the non-nurturing condition perform better when re-evaluated using the intra-learning fitness test/non-nurturing condition than when using the post-learning test/nurturing condition,
+Figures \ref{fig:T1IntraLearningFitnessTest} and \ref{fig:T1PostLearningFitnessTest} show that,
+when evaluated using the intra-learning (non-nurturing condition) test,
+those individuals evolved under the non-nurturing condition on average outperform those evolved under the nurturing condition,
+and when evaluating using the post-learning (nurturing condition) test,
+those individuals evolved under the nurturing condition on average outperform those evolved under the non-nurturing condition.
+
+individuals evolved under the non-nurturing condition perform better when re-evaluated using the intra-learning fitness test/non-nurturing condition than when using the post-learning test/nurturing condition,
 and individuals evolved using the nurturing condition perform better when re-evaluated using the post-learning test/nurturing condition than when using the intra-learning test/non-nurturing condition.
 
 %% Pre-Learning Test
 \section{Pre-Learning Test}
 
-Under both evaluation conditions, the pre-learning fitness was statistically significantly inversely proportional to the number of evolutionary tasks,
+As shown in Figure \ref{fig:PreLearningTest},
+under both evaluation conditions, the pre-learning fitness was statistically significantly inversely proportional to the number of evolutionary tasks,
 suggesting that the quality of evolved instincts decreases with the number of evolutionary tasks when it is also possible to evolve learning.
 
-Networks evolved using the non-nurturing condition performed better on this evaluation than networks evolved using the nurturing condition by a statistically significant margin,
+Individuals evolved using the non-nurturing condition performed better on this evaluation than individuals evolved using the nurturing condition by a statistically significant margin,
 suggesting that instincts (initial weights) make a larger contribution to fitness in the non-nurturing case than in the nurturing case.
 
 %% Learning Improvement
 \section{Learning Improvement}
 
 As shown in Figure \ref{fig:LearningImprovement},
-the improvement in fitness due to learning increases as the number of evolutionary tasks increases.
+the improvement in fitness due to learning increases as the number of evolutionary tasks increases under both the nurturing and non-nurturing conditions.
 This suggests that learning becomes an increasingly important evolutionary strategy as the environment becomes more varied.
 
 %% Weight-Generalization Learning Test
 \section{Weight-Generalization Learning Test}
 
-In both evaluation conditions,
-the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition,
+As shown in Figures \ref{fig:IntraLearningWeightGeneralizationTest} and \ref{fig:PostLearningWeightGeneralizationTest},
+the learning rule evolved under the nurturing condition performed better than the learning rule evolved under the non-nurturing condition
+when using both the intra-learning and post-learning tests,
 suggesting that the learning rule makes a larger contribution to fitness under the nurturing condition than it does under the non-nurturing condition.
 
 %% Task Generalization Learning Test
